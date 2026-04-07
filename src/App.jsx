@@ -13,6 +13,8 @@ import NorthwindTraders from './pages/NorthwindTraders';
 import WpcFacilitator from './pages/WpcFacilitator';
 import BridgeCareerPlatform from './pages/BridgeCareerPlatform';
 import StrategicSwotNetflix from './pages/StrategicSwotNetflix';
+import Resume from './pages/Resume';
+
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -56,6 +58,7 @@ function App() {
             <Route path="/blog/full-funnel-analytics" element={<BlogPost />} />
             <Route path="/blog/marketing-attribution" element={<BlogAttribution />} />
             <Route path="/blog/minecraft-data-foundation" element={<BlogMinecraft />} />
+            <Route path="/resume" element={<Resume />} />
           </Routes>
         </main>
         <Footer />
