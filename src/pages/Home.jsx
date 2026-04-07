@@ -2,6 +2,19 @@ import { motion, useMotionValue, useTransform, animate, useInView, AnimatePresen
 import { ArrowRight, Lightbulb, Mail, MapPin, X, GraduationCap, Calendar, Users, Megaphone, Camera, ChevronLeft, ChevronRight, MessageCircle, CheckCheck, Briefcase, FileText, Clock3, Compass, CalendarDays } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
+import asuBrandPortPhoto from '../assets/Photo/mainport.jpeg';
+import placeholder2 from '../assets/Photo/Mainhomephoto/BESTOFBRANDPORT.png';
+import placeholder1 from '../assets/Photo/Mainhomephoto/BGEDITPORT.png';
+import placeholder3 from '../assets/Photo/Mainhomephoto/SAMPLEPROJPORT.png';
+import placeholder4 from '../assets/Photo/Mainhomephoto/WORKBOOKBGPORT.png'; 
+
+import nomadtemp from '../assets/Photo/Mainhomephoto/Nomadtempport.png'; 
+import icustomer from '../assets/Photo/Mainhomephoto/ICSUTPORT.png'; 
+import asu_brand from '../assets/Photo/Mainhomephoto/ASUBRANDPORT.png'; 
+
+
+
+
 
 const AnimatedNumber = ({ value }) => {
   const ref = useRef(null);
@@ -979,7 +992,7 @@ const Home = () => {
             className="relative h-[500px] w-full rounded-[32px] overflow-hidden shadow-[0_32px_70px_rgba(110,93,121,0.16)] border border-brand-white/70"
           >
             <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
+              src={asuBrandPortPhoto}
               alt="Vinita Shah Professional Portrait"
               className="w-full h-full object-cover"
             />
@@ -1266,18 +1279,18 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
             {[
               {
-                img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=600&auto=format&fit=crop",
+                img: asu_brand ,
                 title: "ASU Brand Guide",
                 problem: "Brand asset requests were unorganized, slowing down university-wide marketing campaigns.",
                 solution: "Restructured the central asset management portal and built a streamlined request workflow.",
                 result: "Streamlined asset distribution by 30%, saving the creative team 10+ hours weekly across 500+ projects.",
                 details: "I led the cross-functional effort to overhaul the ASU Brand Guide accessibility. We conducted audits of existing visual assets, interviewed key stakeholders in marketing, and organized a unified portal. This repaired a broken operational pipeline, ensuring that 50+ departments had reliable access to brand-approved resources instantly.",
                 skills: ["Brand Operations", "CMS Management", "Workflow Optimization", "Cross-team Comm"],
-                gallery: ["placeholder", "placeholder", "placeholder", "placeholder"],
+                gallery: [placeholder1, placeholder2, placeholder3, placeholder4],
                 delay: 0
               },
               {
-                img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
+                img: icustomer ,
                 title: "iCustomer",
                 hasBlog: true,
                 problem: "eCommerce brand lacked a consistent content strategy to drive B2C customer growth and online visibility.",
@@ -1309,7 +1322,7 @@ const Home = () => {
                 ]
               },
               {
-                img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600&auto=format&fit=crop",
+                img: nomadtemp ,
                 title: "Nomad Temporary Housing",
                 problem: "Fortune 1000 clients faced slow response times during high-volume housing requests.",
                 solution: "Implemented a prioritization matrix and standardized communication templates.",
