@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  
+  --color-brand-cream: #faf7f2;
+  --color-brand-cream-soft: #f8f6f4;
+  --color-brand-lavender: #ede7f6;
+  --color-brand-blush: #f8e1e7;
+  --color-brand-sage: #e6f0ea;
+  --color-brand-peach: #fbe8d8;
+  --color-brand-gold: #d4a373;
+  --color-brand-gold-deep: #c7925f;
+  --color-brand-plum: #4a3f55;
+  --color-brand-charcoal: #5f5f5f;
+  --color-brand-line: #e8dfd6;
+  --color-brand-white: #fffdf9;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 17px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(circle at top left, rgba(237, 231, 246, 0.85), transparent 28%),
+    radial-gradient(circle at top right, rgba(251, 232, 216, 0.8), transparent 24%),
+    linear-gradient(180deg, #faf7f2 0%, #f8f6f4 100%);
+  color: var(--color-brand-charcoal);
+  line-height: 1.6;
+}
+
+main :is(p, li, td, th, span)[class*="text-sm"] {
+  font-size: 0.94rem !important;
+  line-height: 1.74 !important;
+}
+
+main :is(p, li, td, th, span)[class*="text-\\[12px\\]"] {
+  font-size: 0.82rem !important;
+  line-height: 1.7 !important;
+}
+
+main :is(p, li, td, th, span)[class*="text-\\[13px\\]"] {
+  font-size: 0.88rem !important;
+  line-height: 1.72 !important;
+}
+
+main :is(p, li, td, th, span)[class*="text-\\[14px\\]"] {
+  font-size: 0.94rem !important;
+  line-height: 1.74 !important;
+}
+
+main :is(p, li, td, th, span)[class*="text-\\[15px\\]"] {
+  font-size: 1rem !important;
+  line-height: 1.78 !important;
+}
+
+main :is(p, li, td, th, span)[class*="text-\\[16px\\]"] {
+  font-size: 1.06rem !important;
+  line-height: 1.82 !important;
+}
+
+footer p[class*="text-sm"] {
+  font-size: 0.94rem !important;
+  line-height: 1.74 !important;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a,
+button {
+  transition:
+    color 200ms ease,
+    background-color 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease;
+}
+
+button[class*="text-sm"],
+a[class*="text-sm"],
+a[class*="font-semibold"],
+button[class*="font-semibold"] {
+  font-size: 0.98rem;
+}
+
+::selection {
+  background: rgba(212, 163, 115, 0.28);
+  color: var(--color-brand-plum);
+}
