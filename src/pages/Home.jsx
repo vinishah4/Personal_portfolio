@@ -21,22 +21,21 @@ const DoodleShell = ({ className = "", innerClassName = "", children }) => (
     whileInView={{ opacity: 1, scale: 1, y: 0 }}
     viewport={{ once: false, margin: "-12% 0px" }}
     transition={{ duration: 0.65, ease: "easeOut" }}
-    className={`absolute ${className}`}
+    className={`absolute z-20 ${className}`}
   >
     <motion.div
       animate={{
         y: [0, -10, 0],
         rotate: [-1.5, 1.5, -1.5],
         boxShadow: [
-          "0 18px 38px rgba(110,93,121,0.10)",
-          "0 26px 52px rgba(110,93,121,0.16)",
-          "0 18px 38px rgba(110,93,121,0.10)",
+          "0 0 0 rgba(0,0,0,0)",
+          "0 0 0 rgba(0,0,0,0)",
+          "0 0 0 rgba(0,0,0,0)",
         ],
       }}
       transition={{ duration: 6.4, repeat: Infinity, ease: "easeInOut" }}
-      className={`relative overflow-hidden rounded-[2rem] border border-brand-white/80 bg-[linear-gradient(145deg,rgba(255,250,244,0.95),rgba(244,231,238,0.92)_45%,rgba(228,239,232,0.85))] p-4 backdrop-blur-sm ${innerClassName}`}
+      className={`relative overflow-visible rounded-[2rem] border-0 bg-transparent p-4 shadow-none backdrop-blur-0 ${innerClassName}`}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.72),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(212,163,115,0.18),transparent_36%)]" />
       <div className="relative z-10">{children}</div>
     </motion.div>
   </motion.div>
@@ -1270,22 +1269,25 @@ const Home = () => {
       >
         <div className="relative">
           <div className="absolute inset-x-0 top-10 mx-auto h-px max-w-6xl bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent"></div>
-          <div className="grid min-h-[90vh] items-center gap-12 py-16 md:grid-cols-2">
+          <div className="grid min-h-[90vh] items-center gap-10 py-16 md:grid-cols-[minmax(0,0.92fr)_minmax(0,0.84fr)] xl:gap-12">
             <div className="relative">
-              <DoodleShell className="left-[-248px] top-4 hidden md:block" innerClassName="w-[248px]">
-                <div className="relative h-[248px]">
-                  <FloatingDoodle className="left-1/2 top-2 -translate-x-1/2" />
+              <DoodleShell
+                className="left-0 top-4 hidden md:block md:-translate-x-[34%] lg:-translate-x-[42%] xl:-translate-x-[62%]"
+                innerClassName="w-[clamp(144px,17vw,248px)]"
+              >
+                <div className="relative aspect-square">
+                  <FloatingDoodle className="left-1/2 top-2 w-[80%] -translate-x-1/2 lg:w-[84%] xl:w-[86%]" />
                 </div>
               </DoodleShell>
               <motion.div
                 initial="hidden"
                 animate="visible"
                 variants={fadeIn}
-                className="relative z-10 flex flex-col gap-6 rounded-[36px] border border-white/65 bg-white/45 p-8 shadow-[0_24px_60px_rgba(170,119,140,0.08)] backdrop-blur-[3px] md:p-10"
+                className="relative z-10 max-w-[50rem] flex flex-col gap-5 rounded-[36px] border border-white/65 bg-white/45 p-7 shadow-[0_24px_60px_rgba(170,119,140,0.08)] backdrop-blur-[3px] md:p-8 lg:p-9"
               >
                 <div className="pointer-events-none absolute inset-0 rounded-[36px] bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.6),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(247,217,229,0.28),transparent_38%)]" />
                 <div className="relative">
-                  <h1 className="relative text-5xl md:text-7xl font-serif font-bold text-brand-plum leading-tight">
+                  <h1 className="relative text-5xl md:text-6xl xl:text-7xl font-serif font-bold text-brand-plum leading-tight">
                     I show up.<br />
                     <span className="text-brand-gold italic">I figure it out.</span><br />
                     I make it better.
@@ -1311,7 +1313,7 @@ const Home = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="relative z-10 h-[500px] w-full rounded-[32px] overflow-hidden shadow-[0_32px_70px_rgba(110,93,121,0.16)] border border-brand-white/70"
+              className="relative z-10 mx-auto h-[420px] w-full max-w-[46rem] rounded-[32px] overflow-hidden border border-brand-white/70 shadow-[0_32px_70px_rgba(110,93,121,0.16)] md:h-[450px] lg:h-[470px]"
             >
               <img
                 src={asuBrandPortPhoto}

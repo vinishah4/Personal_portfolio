@@ -25,7 +25,7 @@ const FloatingDoodle = ({ className = "" }) => {
     <div
       ref={rootRef}
       aria-hidden="true"
-      className={`pointer-events-auto absolute h-auto w-[215px] ${className}`}
+      className={`pointer-events-auto absolute h-auto w-full max-w-[215px] ${className}`}
       style={{ zIndex: 1 }}
       onMouseEnter={() => setIsAwake(true)}
       onMouseLeave={() => setIsAwake(false)}

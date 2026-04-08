@@ -1,20 +1,21 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import BlogPost from './pages/BlogPost';
-import BlogAttribution from './pages/BlogAttribution';
-import BlogMinecraft from './pages/BlogMinecraft';
-import Portfolio from './pages/Portfolio';
-import IndonesiaMarketEntry from './pages/IndonesiaMarketEntry';
-import NorthwindTraders from './pages/NorthwindTraders';
-import WpcFacilitator from './pages/WpcFacilitator';
-import BridgeCareerPlatform from './pages/BridgeCareerPlatform';
-import StrategicSwotNetflix from './pages/StrategicSwotNetflix';
-import AsuProductionAssistant from './pages/AsuProductionAssistant';
-import Resume from './pages/Resume';
+
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
+const BlogAttribution = lazy(() => import('./pages/BlogAttribution'));
+const BlogMinecraft = lazy(() => import('./pages/BlogMinecraft'));
+const Portfolio = lazy(() => import('./pages/Portfolio'));
+const IndonesiaMarketEntry = lazy(() => import('./pages/IndonesiaMarketEntry'));
+const NorthwindTraders = lazy(() => import('./pages/NorthwindTraders'));
+const WpcFacilitator = lazy(() => import('./pages/WpcFacilitator'));
+const BridgeCareerPlatform = lazy(() => import('./pages/BridgeCareerPlatform'));
+const StrategicSwotNetflix = lazy(() => import('./pages/StrategicSwotNetflix'));
+const AsuProductionAssistant = lazy(() => import('./pages/AsuProductionAssistant'));
+const Resume = lazy(() => import('./pages/Resume'));
 
 
 function ScrollToTop() {
@@ -40,6 +41,16 @@ function ScrollToTop() {
   return null;
 }
 
+function RouteLoader() {
+  return (
+    <div className="flex min-h-[50vh] items-center justify-center px-6">
+      <div className="rounded-full border border-brand-line/70 bg-brand-white/80 px-5 py-2 text-sm font-semibold tracking-[0.18em] text-brand-plum/80 uppercase shadow-sm">
+        Loading
+      </div>
+    </div>
+  );
+}
+
 function App() {
   return (
     <Router>
@@ -47,21 +58,23 @@ function App() {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/portfolio/wpc-facilitator-program" element={<WpcFacilitator />} />
-            <Route path="/portfolio/indonesia-market-entry" element={<IndonesiaMarketEntry />} />
-            <Route path="/portfolio/northwind-traders" element={<NorthwindTraders />} />
-            <Route path="/portfolio/bridgecareer-platform-strategy" element={<BridgeCareerPlatform />} />
-            <Route path="/portfolio/strategic-swot-analysis-netflix" element={<StrategicSwotNetflix />} />
-            <Route path="/portfolio/asu-production-assistant" element={<AsuProductionAssistant />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/blog/full-funnel-analytics" element={<BlogPost />} />
-            <Route path="/blog/marketing-attribution" element={<BlogAttribution />} />
-            <Route path="/blog/minecraft-data-foundation" element={<BlogMinecraft />} />
-            <Route path="/resume" element={<Resume />} />
-          </Routes>
+          <Suspense fallback={<RouteLoader />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/portfolio/wpc-facilitator-program" element={<WpcFacilitator />} />
+              <Route path="/portfolio/indonesia-market-entry" element={<IndonesiaMarketEntry />} />
+              <Route path="/portfolio/northwind-traders" element={<NorthwindTraders />} />
+              <Route path="/portfolio/bridgecareer-platform-strategy" element={<BridgeCareerPlatform />} />
+              <Route path="/portfolio/strategic-swot-analysis-netflix" element={<StrategicSwotNetflix />} />
+              <Route path="/portfolio/asu-production-assistant" element={<AsuProductionAssistant />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/blog/full-funnel-analytics" element={<BlogPost />} />
+              <Route path="/blog/marketing-attribution" element={<BlogAttribution />} />
+              <Route path="/blog/minecraft-data-foundation" element={<BlogMinecraft />} />
+              <Route path="/resume" element={<Resume />} />
+            </Routes>
+          </Suspense>
         </main>
         <Footer />
       </div>
