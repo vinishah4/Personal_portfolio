@@ -15,6 +15,33 @@ import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader'
 
 
 
+const DoodleShell = ({ className = "", innerClassName = "", children }) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.94, y: 16 }}
+    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+    viewport={{ once: false, margin: "-12% 0px" }}
+    transition={{ duration: 0.65, ease: "easeOut" }}
+    className={`absolute ${className}`}
+  >
+    <motion.div
+      animate={{
+        y: [0, -10, 0],
+        rotate: [-1.5, 1.5, -1.5],
+        boxShadow: [
+          "0 18px 38px rgba(110,93,121,0.10)",
+          "0 26px 52px rgba(110,93,121,0.16)",
+          "0 18px 38px rgba(110,93,121,0.10)",
+        ],
+      }}
+      transition={{ duration: 6.4, repeat: Infinity, ease: "easeInOut" }}
+      className={`relative overflow-hidden rounded-[2rem] border border-brand-white/80 bg-[linear-gradient(145deg,rgba(255,250,244,0.95),rgba(244,231,238,0.92)_45%,rgba(228,239,232,0.85))] p-4 backdrop-blur-sm ${innerClassName}`}
+    >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.72),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(212,163,115,0.18),transparent_36%)]" />
+      <div className="relative z-10">{children}</div>
+    </motion.div>
+  </motion.div>
+);
+
 const AnimatedNumber = ({ value }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -1245,7 +1272,11 @@ const Home = () => {
           <div className="absolute inset-x-0 top-10 mx-auto h-px max-w-6xl bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent"></div>
           <div className="grid min-h-[90vh] items-center gap-12 py-16 md:grid-cols-2">
             <div className="relative">
-              <FloatingDoodle className="left-[-210px] top-12 hidden md:block" />
+              <DoodleShell className="left-[-248px] top-4 hidden md:block" innerClassName="w-[248px]">
+                <div className="relative h-[248px]">
+                  <FloatingDoodle className="left-1/2 top-2 -translate-x-1/2" />
+                </div>
+              </DoodleShell>
               <motion.div
                 initial="hidden"
                 animate="visible"
@@ -1899,8 +1930,12 @@ const Home = () => {
       {/* 8. Doodle Break */}
       <section className="bg-brand-cream px-6 py-10 md:px-12">
         <div className="mx-auto flex max-w-6xl items-center justify-center gap-10">
-          <div className="relative h-[190px] w-[215px] shrink-0">
-            <FloatingDoodle className="left-1/2 top-0 -translate-x-1/2" />
+          <div className="relative h-[256px] w-[270px] shrink-0">
+            <DoodleShell className="left-1/2 top-0 -translate-x-1/2" innerClassName="w-[270px]">
+              <div className="relative h-[228px]">
+                <FloatingDoodle className="left-1/2 top-2 -translate-x-1/2" />
+              </div>
+            </DoodleShell>
           </div>
           <p className="max-w-[260px] text-center text-2xl font-serif italic leading-snug text-brand-plum md:text-left">
             Thanks for stopping by my portfolio 🌸
