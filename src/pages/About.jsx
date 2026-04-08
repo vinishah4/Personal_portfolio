@@ -10,6 +10,95 @@ import realWorld from  '../assets/Photo/snowport.png';
 import becoming from  '../assets/Photo/26port.jpeg';
 import whatsNext from  '../assets/Photo/wnport.png';
 
+const JourneyBloomDoodle = ({ className = '' }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 12 }}
+    animate={{ opacity: 1, y: [0, -6, 0], x: [0, 4, 0], rotate: [-1, 2, -1] }}
+    transition={{
+      opacity: { duration: 0.6 },
+      y: { duration: 5.8, repeat: Infinity, ease: 'easeInOut' },
+      x: { duration: 7.6, repeat: Infinity, ease: 'easeInOut' },
+      rotate: { duration: 6.4, repeat: Infinity, ease: 'easeInOut' },
+    }}
+    className={`pointer-events-none absolute ${className}`}
+    aria-hidden="true"
+  >
+    <svg viewBox="0 0 220 190" className="h-auto w-[165px] md:w-[200px]" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M18 148C40 130 54 120 64 102C76 81 93 66 113 62C130 58 145 64 153 76C161 88 161 103 150 114C140 124 123 129 112 139C97 152 86 167 80 181"
+        stroke="#d5a86b"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeDasharray="2 10"
+        opacity="0.72"
+      />
+      <path
+        d="M42 164C56 156 68 145 75 132"
+        stroke="#d5a86b"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        opacity="0.6"
+      />
+      <g transform="translate(116 78)">
+        <motion.g
+          animate={{ rotate: [0, 6, -4, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+          style={{ originX: '50%', originY: '50%' }}
+        >
+          <path
+            d="M0 0C-14 -19 -32 -30 -48 -24C-62 -18 -63 2 -48 12C-34 22 -16 18 0 0Z"
+            fill="#f0d7e6"
+            stroke="#5f5669"
+            strokeWidth="2.1"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M0 0C-6 -18 -1 -33 11 -38C23 -42 31 -29 26 -16C21 -4 10 2 0 0Z"
+            fill="#f8e7c1"
+            stroke="#5f5669"
+            strokeWidth="2.1"
+            strokeLinejoin="round"
+          />
+          <path d="M-4 -2C-16 -10 -28 -12 -38 -8" stroke="#fffaf6" strokeWidth="1.25" strokeLinecap="round" opacity="0.75" />
+          <path d="M3 -4C7 -15 12 -22 18 -26" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
+        </motion.g>
+
+        <motion.g
+          animate={{ rotate: [0, -6, 4, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.18 }}
+          style={{ originX: '50%', originY: '50%' }}
+        >
+          <path
+            d="M0 0C14 -19 32 -30 48 -24C62 -18 63 2 48 12C34 22 16 18 0 0Z"
+            fill="#dce8f3"
+            stroke="#5f5669"
+            strokeWidth="2.1"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M0 0C6 -18 1 -33 -11 -38C-23 -42 -31 -29 -26 -16C-21 -4 -10 2 0 0Z"
+            fill="#f5ddd1"
+            stroke="#5f5669"
+            strokeWidth="2.1"
+            strokeLinejoin="round"
+          />
+          <path d="M4 -2C16 -10 28 -12 38 -8" stroke="#fffaf6" strokeWidth="1.25" strokeLinecap="round" opacity="0.75" />
+          <path d="M-3 -4C-7 -15 -12 -22 -18 -26" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
+        </motion.g>
+        <path d="M0 -6V42" stroke="#5f5669" strokeWidth="2.4" strokeLinecap="round" />
+        <path d="M0 8C-8 18 -16 28 -18 40" stroke="#7da089" strokeWidth="2.1" strokeLinecap="round" />
+        <path d="M0 14C8 23 15 32 16 44" stroke="#8cb09a" strokeWidth="2.1" strokeLinecap="round" />
+        <path d="M-6 24C-15 20 -21 15 -24 8" stroke="#9bbca7" strokeWidth="1.9" strokeLinecap="round" />
+        <path d="M7 29C16 28 25 31 31 38" stroke="#cfa4b5" strokeWidth="1.8" strokeLinecap="round" />
+        <circle cx="0" cy="-8" r="4.2" fill="#5f5669" />
+        <path d="M-1 -10C-5 -18 -9 -22 -14 -22" stroke="#5f5669" strokeWidth="1.6" strokeLinecap="round" />
+        <path d="M1 -10C5 -18 9 -22 14 -22" stroke="#5f5669" strokeWidth="1.6" strokeLinecap="round" />
+        <circle cx="-14.5" cy="-22.5" r="1.5" fill="#5f5669" />
+        <circle cx="14.5" cy="-22.5" r="1.5" fill="#5f5669" />
+      </g>
+    </svg>
+  </motion.div>
+);
 
 const timelineData = [
   {
@@ -67,7 +156,8 @@ const About = () => {
   return (
     <div className="bg-brand-cream min-h-screen pt-28 pb-12 overflow-x-hidden font-serif">
       {/* 1. Hero */}
-      <section className="text-center px-6 py-16 md:py-24 max-w-4xl mx-auto flex flex-col items-center">
+      <section className="relative text-center px-6 py-16 md:py-24 max-w-4xl mx-auto flex flex-col items-center">
+        <JourneyBloomDoodle className="-right-2 top-8 hidden md:block" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

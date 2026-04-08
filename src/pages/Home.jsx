@@ -285,7 +285,7 @@ const whatIDoBestCards = [
   {
     id: "02",
     title: "Client & Customer Service",
-    description: "From Fortune 1000 companies to university students — I handle high-volume interactions with professionalism and care.",
+    description: "Coordinating temporary relocation requests between Fortune 1000 corporate clients and accommodation providers, I handle high-volume interactions with professionalism, clarity, and care.",
     tags: ["CRM Tools", "Client Relations", "Problem Solving"],
     color: "bg-[#f4dfe5]",
     icon: Users,
@@ -709,7 +709,7 @@ const NomadCaseStudyModal = ({ study, onClose }) => (
       <div className="absolute inset-x-0 bottom-0 p-8 md:p-12">
         <div className="max-w-[720px] mx-auto w-full">
           <h3 className="text-4xl md:text-5xl font-serif font-bold text-white leading-tight">Nomad Temporary Housing</h3>
-          <p className="mt-4 text-[13px] md:text-sm font-bold tracking-[0.22em] uppercase text-[#9bd0c5]">Client Experience · Fortune 1000</p>
+          <p className="mt-4 text-[13px] md:text-sm font-bold tracking-[0.22em] uppercase text-[#9bd0c5]">Client Experience Internship · Fortune 1000</p>
         </div>
       </div>
     </motion.div>
@@ -719,7 +719,7 @@ const NomadCaseStudyModal = ({ study, onClose }) => (
         <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: "easeInOut", delay: 0.12 }}>
           <h4 className="text-sm font-bold tracking-[0.24em] text-brand-gold uppercase mb-5">Project Overview</h4>
           <p className="text-lg leading-[1.9] text-brand-charcoal font-serif max-w-[680px]">
-            Working directly with Fortune 1000 executives requires high touch and extreme precision. I was responsible for intaking, triaging, and solving massive volumes of temporary housing placements for high-level employees across companies including Deloitte, Accenture, Microsoft, Mayo Clinic, and State Farm. I implemented a response matrix that cut our time-to-first-reply in half, keeping satisfaction consistently high across 500+ interactions.
+            My internship at Nomad Temporary Housing was one of my first deep dives into client-facing operations. I supported temporary housing requests for employees at companies including Deloitte, Accenture, Microsoft, Mayo Clinic, and State Farm, while learning how to communicate under pressure, manage high-volume requests, and build more organized support systems. That experience strengthened both my professionalism and my confidence in fast-moving business environments.
           </p>
           <NomadMetricStrip />
         </motion.section>
@@ -1301,9 +1301,9 @@ const Home = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 rounded-[28px] border border-brand-line/70 bg-brand-peach/45 px-4 py-8 md:px-8 md:py-10 shadow-[0_20px_45px_rgba(110,93,121,0.08)] divide-x divide-brand-gold/15 text-center"
           >
             {[
-              { number: 600, suffix: "+", label: "Projects Managed" },
+              { number: 600, suffix: "+", label: "Brand Projects Tracked" },
               { number: 40, suffix: "", label: "Students Mentored" },
-              { number: 1000, suffix: "", label: "Fortune Clients" },
+              { number: 500, suffix: "+", label: "Client Requests Managed" },
               { number: 4, suffix: "+", label: "Years Experience" }
             ].map((stat, idx) => (
               <motion.div key={idx} variants={fadeIn} className="flex flex-col gap-2">
@@ -1339,7 +1339,7 @@ const Home = () => {
       </section>
 
       {/* 4. Current Role */}
-      <section className="bg-brand-cream-soft px-6 md:px-12">
+      <section className="bg-[linear-gradient(180deg,#fbf5ee_0%,#f8f1e9_100%)] px-6 md:px-12">
         <div className="max-w-7xl mx-auto border-y border-brand-line/70 py-16 md:py-20">
           <div className="grid gap-10 md:gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 items-start">
             <motion.div
@@ -1440,7 +1440,7 @@ const Home = () => {
       </section>
 
       {/* 5. What I Do Best */}
-      <section className="py-24 md:py-28 px-6 md:px-12 bg-brand-cream-soft">
+      <section className="py-24 md:py-28 px-6 md:px-12 bg-brand-white border-y border-brand-line/45">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 relative">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -1514,7 +1514,7 @@ const Home = () => {
       </section>
 
       {/* 7. Case Studies */}
-      <section id="portfolio" className="py-24 px-6 md:px-12 bg-brand-cream-soft">
+      <section id="portfolio" className="py-24 px-6 md:px-12 bg-[linear-gradient(180deg,#f9f4fb_0%,#fcf8f2_100%)]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif font-bold text-brand-plum mb-4">My Work in Action</h2>
@@ -1539,11 +1539,11 @@ const Home = () => {
               {
                 img: nomadtemp ,
                 title: "Nomad Temporary Housing",
-                overviewBadge: "Client Experience · Fortune 1000",
-                problem: "High-volume housing requests were slowing response times for Fortune 1000 clients.",
+                overviewBadge: "Client Experience Internship · Fortune 1000",
+                problem: "As an intern, I stepped into a fast-moving client support environment where high-volume housing requests needed faster, more reliable responses.",
                 solution: "Implemented a prioritization matrix and standardized communication templates.",
                 result: "Handled 500+ inquiries while maintaining a 98% satisfaction rate through structured CRM workflows.",
-                details: "Working directly with Fortune 1000 executives requires high touch and extreme precision. I was responsible for intaking, triaging, and solving massive volumes of temporary housing placements for high-level employees. I implemented a response matrix that cut our time-to-first-reply in half, keeping satisfaction high.",
+                details: "My internship at Nomad Temporary Housing gave me real experience in fast-paced client operations. I supported temporary housing requests for employees at major companies, learned how to communicate with urgency and professionalism, and built systems that improved response time, visibility, and follow-through across 500+ interactions.",
                 skills: ["Client Experience", "Crisis Management", "Operations", "B2B Support"],
                 delay: 0.15
               },
@@ -1790,7 +1790,7 @@ const Home = () => {
       </section>
 
       {/* Education - Floating Pill Layout */}
-      <section className="py-10 md:py-12 px-6 md:px-12 relative overflow-hidden bg-brand-cream-soft">
+      <section className="py-10 md:py-12 px-6 md:px-12 relative overflow-hidden bg-[linear-gradient(180deg,#fffaf4_0%,#f7efe6_100%)] border-t border-brand-line/45">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8 md:mb-10 relative z-10">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-plum mb-3">
@@ -1903,7 +1903,7 @@ const Home = () => {
             <FloatingDoodle className="left-1/2 top-0 -translate-x-1/2" />
           </div>
           <p className="max-w-[260px] text-center text-2xl font-serif italic leading-snug text-brand-plum md:text-left">
-            Thanks for stopping by my portfolio.
+            Thanks for stopping by my portfolio 🌸
           </p>
         </div>
       </section>
