@@ -3,23 +3,14 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, BarChart3, Briefcase, Compass, Presentation, Users } from 'lucide-react';
 
 const featuredCard = {
-  title: 'Production Assistant — ASU Enterprise Brand Strategy & Management',
-  tag: 'Current Role',
-  description: 'A live case study in brand operations, digital content systems, competitive research, and creative collaboration inside a major university brand team.',
-  route: '/portfolio/asu-production-assistant',
+  title: 'Strategic SWOT Analysis — Netflix',
+  tag: 'Strategy',
+  description: "A structured strategic analysis translating Netflix's market position, risks, and opportunities into clear decision-ready recommendations.",
+  route: '/portfolio/strategic-swot-analysis-netflix',
   bg: 'bg-[#EEF1EB]',
 };
 
 const gridCards = [
-  {
-    title: 'Strategic SWOT Analysis — Netflix',
-    tag: 'Strategy',
-    description: "A structured strategic analysis translating Netflix's market position, risks, and opportunities into clear decision-ready recommendations.",
-    route: '/portfolio/strategic-swot-analysis-netflix',
-    tone: 'bg-[#EEF1EB]',
-    tagTone: 'bg-[#DDE8DF] text-[#506454]',
-    icon: <Briefcase size={18} strokeWidth={1.8} />,
-  },
   {
     title: 'Business Insights for Northwind Traders',
     tag: 'Data',
@@ -86,10 +77,10 @@ const Portfolio = () => {
           >
             <p className="mb-5 text-sm font-bold uppercase tracking-[0.24em] text-[#7EA898]">Portfolio</p>
             <h1 className="text-4xl font-serif font-bold leading-tight text-[#2F2F2F] md:text-5xl">
-              A curated selection of strategy, product, data, and leadership work.
+              A curated selection of brand strategy, operations, digital content, and leadership work.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-[1.9] text-[#4C4C4C]">
-              The portfolio is designed to be easy to scan quickly: one featured case study up front, followed by a focused grid of supporting work.
+              Start with the featured case study, then explore a focused set of supporting projects.
             </p>
           </motion.div>
 
@@ -118,17 +109,19 @@ const Portfolio = () => {
                   </div>
                 </div>
 
-                <div className="relative min-h-[220px] overflow-hidden rounded-[24px] bg-[linear-gradient(145deg,#dfe8df_0%,#e7e1ef_48%,#f2efe8_100%)]">
+                <div className="relative flex min-h-[260px] flex-col overflow-hidden rounded-[24px] bg-[linear-gradient(145deg,#dfe8df_0%,#e7e1ef_48%,#f2efe8_100%)] p-6">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(168,191,176,0.42),transparent_26%),radial-gradient(circle_at_75%_30%,rgba(175,195,210,0.34),transparent_28%),radial-gradient(circle_at_55%_75%,rgba(214,204,227,0.5),transparent_30%)]" />
-                  <div className="absolute left-6 top-6 rounded-full border border-white/60 bg-white/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#5A5A5A] backdrop-blur-sm">
-                    Featured
+                  <div className="relative z-10">
+                    <div className="inline-flex rounded-full border border-white/60 bg-white/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#5A5A5A] backdrop-blur-sm">
+                      Featured
+                    </div>
                   </div>
-                  <div className="absolute bottom-6 left-6 right-6 grid grid-cols-2 gap-3">
+                  <div className="relative z-10 mt-auto grid grid-cols-2 gap-3 pt-8">
                     {[
-                      ['Focus', 'Brand Ops'],
-                      ['Tools', 'Drupal'],
-                      ['Scope', 'Research'],
-                      ['Status', 'Current'],
+                      ['Framework', 'SWOT'],
+                      ['Focus', 'Growth'],
+                      ['Lens', 'Strategy'],
+                      ['Outcome', 'Decision'],
                     ].map(([label, value]) => (
                       <div key={label} className="rounded-[18px] border border-white/60 bg-white/68 px-4 py-3 backdrop-blur-sm">
                         <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#7A7A7A]">{label}</p>

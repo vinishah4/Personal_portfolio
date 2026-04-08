@@ -2,15 +2,13 @@ import { motion, useMotionValue, useTransform, animate, useInView, AnimatePresen
 import { ArrowRight, Lightbulb, Mail, MapPin, X, GraduationCap, Users, Megaphone, Camera, ChevronLeft, ChevronRight, MessageCircle, CheckCheck, Briefcase, FileText, Clock3, Compass, CalendarDays } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
-import placeholder2 from '../assets/Photo/Mainhomephoto/BESTOFBRANDPORT.png';
-import placeholder1 from '../assets/Photo/Mainhomephoto/BGEDITPORT.png';
-import placeholder3 from '../assets/Photo/Mainhomephoto/SAMPLEPROJPORT.png';
-import placeholder4 from '../assets/Photo/Mainhomephoto/WORKBOOKBGPORT.png'; 
 import asuBrandPortPhoto from '../assets/Photo/mainport.jpeg';
 
 import nomadtemp from '../assets/Photo/Mainhomephoto/Nomadtempport.png'; 
 import icustomer from '../assets/Photo/Mainhomephoto/ICSUTPORT.png'; 
 import asu_brand from '../assets/Photo/Mainhomephoto/ASUBRANDPORT.png'; 
+import FloatingDoodle from '../components/FloatingDoodle';
+import HomeTestimonials from '../components/ui/testimonials-demo';
 import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader';
 
 
@@ -314,7 +312,7 @@ const currentRoleHoverCards = [
   {
     id: "01",
     title: "Project & Workflow Management",
-    teaser: "Hover to see what I built",
+    teaser: "Inside the system",
     description:
       "Built and scaled Wrike workflows for major ASU brand initiatives, including Sun Devil Athletics — managing and reporting on 600+ projects while creating new workflow systems to improve visibility, coordination, and on-time delivery.",
     pills: ["Wrike", "Project Tracking", "Reporting", "Documentation", "Cross-team Coordination"],
@@ -326,7 +324,7 @@ const currentRoleHoverCards = [
   {
     id: "02",
     title: "Digital & Website Management",
-    teaser: "Hover to see what I managed",
+    teaser: "How it works",
     description:
       "Maintained and updated the ASU Brand Guide website using Drupal CMS — aligning web content with internal brand standards and refining backend pages for consistency, usability, and accessibility.",
     pills: ["Drupal CMS", "Webspark", "Content Management", "Brand Standards", "Accessibility"],
@@ -338,7 +336,7 @@ const currentRoleHoverCards = [
   {
     id: "03",
     title: "Cross-Functional Execution",
-    teaser: "Hover to see how I collaborated",
+    teaser: "See execution",
     description:
       "Collaborated with design, marketing, and media teams across ASU to support brand campaigns, multimedia planning, and internal reporting — improving project visibility and ensuring on-time asset delivery.",
     pills: ["Team Collaboration", "Brand Campaigns", "Stakeholder Alignment", "Asset Delivery", "Media Support"],
@@ -386,6 +384,81 @@ const wpcWorkshopTopics = [
     icon: <Compass size={22} strokeWidth={1.7} />,
     bg: "bg-[#F6EFD8]",
   },
+];
+
+const brandOperationsAreas = [
+  {
+    title: "Workflow Systems",
+    summary: "Managing and structuring large-scale brand workflows",
+    detail:
+      "Built and scaled Wrike workflows for enterprise initiatives, including Sun Devil Athletics — managing and reporting on 600+ projects while improving tracking, documentation, and team coordination.",
+    icon: CheckCheck,
+  },
+  {
+    title: "Digital & Website",
+    summary: "Maintaining ASU's brand infrastructure",
+    detail:
+      "Managed and updated the ASU Brand Guide website (Drupal CMS), aligning content with internal standards and improving usability for 100+ departments.",
+    icon: FileText,
+  },
+  {
+    title: "Brand Research",
+    summary: "Analyzing brand systems and positioning",
+    detail:
+      "Conducted competitor brand audits (NAU, U of A, GCU), identified differentiation opportunities, and refined internal typography and design guidelines.",
+    icon: Lightbulb,
+  },
+  {
+    title: "Asset & Content Management",
+    summary: "Organizing and structuring brand assets",
+    detail:
+      "Centralized user-generated content (UGC), maintained asset libraries, and supported editorial organization for ASU Thrive Magazine.",
+    icon: Briefcase,
+  },
+  {
+    title: "Media & Event Support",
+    summary: "Supporting brand storytelling and production",
+    detail:
+      "Assisted with multimedia planning, photography studio setup, and brand activation content for major initiatives like ASU Commencement.",
+    icon: Camera,
+  },
+  {
+    title: "Operations & Communication",
+    summary: "Supporting internal coordination and systems",
+    detail:
+      "Managed internal communications, onboarding materials, email distribution lists, and documentation systems to support brand and creative teams.",
+    icon: MessageCircle,
+  },
+];
+
+const brandOperationsFlow = [
+  ["Intake", "Brand requests and campaign needs are received"],
+  ["Workflow Setup", "Wrike workflows created and structured"],
+  ["Content & Assets", "Content, assets, and brand materials organized"],
+  ["Collaboration", "Design, marketing, and media teams aligned"],
+  ["Delivery", "Assets executed and delivered"],
+  ["Reporting", "Progress tracked and shared through internal decks"],
+];
+
+const brandOperationsMetrics = [
+  "600+ Projects Managed",
+  "100+ Departments Supported",
+  "~97% On-Time Delivery",
+  "Enterprise Brand Office Experience",
+];
+
+const brandOperationsSkills = [
+  "Wrike",
+  "Drupal",
+  "Figma",
+  "Adobe XD",
+  "Canto",
+  "Project Management",
+  "Content Systems",
+  "Brand Strategy",
+  "Cross-Functional Collaboration",
+  "Documentation",
+  "Asset Management",
 ];
 
 const wpcChallengeRows = [
@@ -1010,6 +1083,130 @@ const WpcCaseStudyModal = ({ onClose }) => (
   </motion.div>
 );
 
+const BrandOperationsCaseStudyModal = ({ study, onClose }) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.95, y: 20 }}
+    animate={{ opacity: 1, scale: 1, y: 0 }}
+    exit={{ opacity: 0, scale: 0.95, y: 20 }}
+    onClick={(e) => e.stopPropagation()}
+    className="relative bg-[#FDFAF6] w-full max-w-5xl rounded-[32px] overflow-y-auto shadow-[0_35px_80px_rgba(74,63,85,0.24)] max-h-[90vh]"
+  >
+    <div className="sticky top-5 z-20 flex justify-end px-5 pt-5 -mb-16 pointer-events-none">
+      <button
+        onClick={onClose}
+        className="pointer-events-auto p-2.5 bg-brand-white/92 hover:bg-brand-white text-brand-plum rounded-full backdrop-blur-md border border-brand-line/70 shadow-[0_10px_30px_rgba(74,63,85,0.12)] transition-all duration-300 cursor-pointer"
+      >
+        <X size={22} />
+      </button>
+    </div>
+
+    <div className="relative h-[280px] md:h-[380px] overflow-hidden">
+      <img src={study.img} alt={study.title} className="w-full h-full object-cover" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#4a3f55]/82 via-[#4a3f55]/26 to-transparent flex items-end p-8 md:p-12">
+        <div>
+          <p className="text-[13px] md:text-sm font-bold tracking-[0.22em] uppercase text-brand-gold">Brand Operations</p>
+          <h3 className="mt-3 text-3xl md:text-5xl font-serif font-bold text-white leading-tight">{study.title}</h3>
+          <p className="mt-4 max-w-2xl text-white/90 text-base md:text-lg leading-[1.8]">
+            Contributing to the systems, content, and execution that power ASU&apos;s enterprise brand.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div className="bg-[#FDFAF6] px-6 py-10 md:px-10 md:py-14">
+      <div className="max-w-[960px] mx-auto space-y-10 md:space-y-12">
+        <section>
+          <h4 className="text-sm font-bold tracking-[0.24em] text-brand-gold uppercase mb-5">Project Overview</h4>
+          <p className="text-lg leading-[1.9] text-brand-charcoal font-serif max-w-[820px]">
+            Working within ASU&apos;s enterprise brand system taught me how large-scale organizations operate behind the scenes. I supported workflow design, website management, competitor research, asset organization, and internal reporting systems that helped keep brand execution consistent across hundreds of initiatives.
+          </p>
+        </section>
+
+        <section className="grid md:grid-cols-3 gap-4">
+          {brandOperationsAreas.map((area, index) => {
+            const Icon = area.icon;
+            return (
+              <motion.div
+                key={area.title}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.45, ease: "easeInOut", delay: index * 0.05 }}
+                className="rounded-[24px] bg-brand-white border border-brand-line/65 p-5 shadow-[0_10px_24px_rgba(110,93,121,0.05)]"
+              >
+                <div className="flex items-center gap-3 text-brand-plum">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-[1rem] bg-brand-cream border border-brand-line/60">
+                    <Icon size={18} strokeWidth={1.8} />
+                  </span>
+                  <h5 className="text-lg font-serif font-bold leading-tight">{area.title}</h5>
+                </div>
+                <p className="mt-4 text-[14px] leading-[1.75] text-brand-charcoal/86">{area.summary}</p>
+                <div className="mt-4 h-px w-full bg-brand-line/70" />
+                <p className="mt-4 text-[14px] leading-[1.75] text-brand-charcoal">{area.detail}</p>
+              </motion.div>
+            );
+          })}
+        </section>
+
+        <section className="rounded-[28px] bg-brand-white border border-brand-line/65 p-7 md:p-8 shadow-[0_10px_24px_rgba(110,93,121,0.05)]">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-gold">How The System Works</p>
+          <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-6">
+            {brandOperationsFlow.map(([label, text], index) => (
+              <div key={label} className="relative rounded-[22px] bg-brand-cream border border-brand-line/55 p-4">
+                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-brand-gold">{label}</p>
+                <p className="mt-3 text-[13px] leading-[1.7] text-brand-charcoal">{text}</p>
+                {index < brandOperationsFlow.length - 1 ? (
+                  <span className="hidden lg:block absolute -right-[10px] top-1/2 -translate-y-1/2 text-brand-gold/55">→</span>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="rounded-[28px] bg-brand-white border border-brand-line/65 p-7 md:p-8 shadow-[0_10px_24px_rgba(110,93,121,0.05)]">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-gold">Scale & Impact</p>
+            <div className="mt-6 grid grid-cols-2 gap-4">
+              {brandOperationsMetrics.map((metric) => (
+                <div key={metric} className="rounded-[22px] bg-brand-cream border border-brand-line/55 px-4 py-5">
+                  <p className="text-[20px] md:text-[22px] font-serif font-bold leading-tight text-brand-plum">{metric}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[28px] bg-brand-white border border-brand-line/65 p-7 md:p-8 shadow-[0_10px_24px_rgba(110,93,121,0.05)]">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-gold">Skills In Action</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {brandOperationsSkills.map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full border border-brand-line/55 bg-brand-cream px-4 py-2 text-[11px] font-bold uppercase tracking-[0.12em] text-brand-plum"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <motion.section
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          className="rounded-[28px] bg-brand-lavender/35 border border-brand-line/60 p-7 md:p-8"
+        >
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-gold">Reflection</p>
+          <p className="mt-5 text-[19px] leading-[1.9] text-brand-charcoal font-serif">
+            Working within ASU&apos;s enterprise brand system taught me how large-scale organizations operate behind the scenes. I learned how workflows, content, and communication come together to create consistent brand execution across hundreds of initiatives.
+          </p>
+        </motion.section>
+      </div>
+    </div>
+  </motion.div>
+);
+
 const Home = () => {
   const [selectedStudy, setSelectedStudy] = useState(null);
 
@@ -1047,39 +1244,43 @@ const Home = () => {
         <div className="relative">
           <div className="absolute inset-x-0 top-10 mx-auto h-px max-w-6xl bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent"></div>
           <div className="grid min-h-[90vh] items-center gap-12 py-16 md:grid-cols-2">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
-              className="relative flex flex-col gap-6 rounded-[36px] border border-white/65 bg-white/45 p-8 shadow-[0_24px_60px_rgba(170,119,140,0.08)] backdrop-blur-[3px] md:p-10"
-            >
-              <div className="pointer-events-none absolute inset-0 rounded-[36px] bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.6),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(247,217,229,0.28),transparent_38%)]" />
-              <h1 className="relative text-5xl md:text-7xl font-serif font-bold text-brand-plum leading-tight">
-                I show up.<br />
-                <span className="text-brand-gold italic">I figure it out.</span><br />
-                I make it better.
-              </h1>
-              <p className="relative text-lg md:text-xl text-brand-charcoal max-w-lg font-sans leading-relaxed">
-                Business Communication graduate focused on branding, marketing strategy, and client engagement. I bring energy, curiosity, and organization to every project.
-              </p>
-              <div className="relative flex flex-wrap gap-4 mt-4">
-                  <a href="#portfolio" className="px-8 py-4 bg-brand-gold text-white rounded-full font-medium hover:bg-brand-gold-deep shadow-[0_16px_35px_rgba(212,163,115,0.22)] cursor-pointer">
-                    View My Work
-                  </a>
-                  <Link to="/about" className="px-8 py-4 border border-brand-line bg-brand-white/70 text-brand-plum rounded-full font-medium hover:bg-brand-lavender/45 transition-all flex items-center gap-2 group cursor-pointer">
-                    My Story <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <Link to="/resume" className="px-8 py-4 border border-brand-line bg-brand-white/70 text-brand-plum rounded-full font-medium hover:bg-brand-blush/45 transition-all flex items-center gap-2 group cursor-pointer">
-                    Resume <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
+            <div className="relative">
+              <FloatingDoodle className="left-[-210px] top-12 hidden md:block" />
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={fadeIn}
+                className="relative z-10 flex flex-col gap-6 rounded-[36px] border border-white/65 bg-white/45 p-8 shadow-[0_24px_60px_rgba(170,119,140,0.08)] backdrop-blur-[3px] md:p-10"
+              >
+                <div className="pointer-events-none absolute inset-0 rounded-[36px] bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.6),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(247,217,229,0.28),transparent_38%)]" />
+                <div className="relative">
+                  <h1 className="relative text-5xl md:text-7xl font-serif font-bold text-brand-plum leading-tight">
+                    I show up.<br />
+                    <span className="text-brand-gold italic">I figure it out.</span><br />
+                    I make it better.
+                  </h1>
                 </div>
-
-            </motion.div>
+                <p className="relative text-lg md:text-xl text-brand-charcoal max-w-lg font-sans leading-relaxed">
+                  Business Communication graduate focused on branding, marketing strategy, and client engagement. I bring energy, curiosity, and organization to every project.
+                </p>
+                <div className="relative flex flex-wrap gap-4 mt-4">
+                    <a href="#portfolio" className="px-8 py-4 bg-brand-gold text-white rounded-full font-medium hover:bg-brand-gold-deep shadow-[0_16px_35px_rgba(212,163,115,0.22)] cursor-pointer">
+                      View My Work
+                    </a>
+                    <Link to="/about" className="px-8 py-4 border border-brand-line bg-brand-white/70 text-brand-plum rounded-full font-medium hover:bg-brand-lavender/45 transition-all flex items-center gap-2 group cursor-pointer">
+                      My Story <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                    <Link to="/resume" className="px-8 py-4 border border-brand-line bg-brand-white/70 text-brand-plum rounded-full font-medium hover:bg-brand-blush/45 transition-all flex items-center gap-2 group cursor-pointer">
+                      Resume <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
+              </motion.div>
+            </div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="relative h-[500px] w-full rounded-[32px] overflow-hidden shadow-[0_32px_70px_rgba(110,93,121,0.16)] border border-brand-white/70"
+              className="relative z-10 h-[500px] w-full rounded-[32px] overflow-hidden shadow-[0_32px_70px_rgba(110,93,121,0.16)] border border-brand-white/70"
             >
               <img
                 src={asuBrandPortPhoto}
@@ -1148,23 +1349,23 @@ const Home = () => {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="max-w-xl"
             >
-              <span className="text-sm font-bold tracking-[0.28em] text-brand-charcoal/55 uppercase">Currently Working At</span>
+              <span className="text-sm font-extrabold tracking-[0.28em] text-brand-plum/70 uppercase">Currently Working At</span>
               <h2 className="mt-4 text-4xl md:text-5xl font-serif font-bold text-brand-plum leading-tight">Production Assistant</h2>
               <p className="mt-4 text-lg md:text-[19px] font-medium text-brand-plum">
-                ASU Enterprise Brand Strategy &amp; Management
+                ASU Chief Brand Office — Enterprise Brand Strategy &amp; Management
               </p>
-              <p className="mt-2 text-sm md:text-[15px] text-brand-charcoal/65 uppercase tracking-[0.12em]">
+              <p className="mt-2 text-sm md:text-[15px] font-bold text-brand-plum/70 uppercase tracking-[0.12em]">
                 Oct 2025 - Present · Tempe, AZ
               </p>
               <p className="mt-6 text-[16px] md:text-[17px] leading-[1.9] text-brand-charcoal">
-                Contributing to real brand strategy at one of the largest universities in the US — working alongside creative directors on campaigns, digital content, and brand operations.
+                Working within ASU&apos;s Chief Brand Office, I support the Enterprise Brand Strategy &amp; Management team through brand operations, digital content systems, and cross-functional coordination that help large-scale initiatives stay organized, visible, and on track.
               </p>
-              <Link
-                to="/portfolio/asu-production-assistant"
+              <a
+                href="#portfolio"
                 className="mt-8 inline-flex items-center gap-2 text-brand-plum font-semibold hover:text-brand-gold transition-colors underline decoration-2 underline-offset-4"
               >
                 See Full Experience <ArrowRight size={18} className="transition-transform" />
-              </Link>
+              </a>
             </motion.div>
 
             <motion.div
@@ -1323,22 +1524,25 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
             {[
               {
-                img: asu_brand ,
-                title: "ASU Brand Guide",
-                problem: "Brand asset requests were unorganized, slowing down university-wide marketing campaigns.",
-                solution: "Restructured the central asset management portal and built a streamlined request workflow.",
-                result: "Streamlined asset distribution by 30%, saving the creative team 10+ hours weekly across 500+ projects.",
-                details: "I led the cross-functional effort to overhaul the ASU Brand Guide accessibility. We conducted audits of existing visual assets, interviewed key stakeholders in marketing, and organized a unified portal. This repaired a broken operational pipeline, ensuring that 50+ departments had reliable access to brand-approved resources instantly.",
-                skills: ["Brand Operations", "CMS Management", "Workflow Optimization", "Cross-team Comm"],
-                gallery: [placeholder1, placeholder2, placeholder3, placeholder4],
+                img: asu_brand,
+                title: "Inside the Brand System",
+                customType: "brandops",
+                overviewBadge: "Chief Brand Office · Enterprise Brand",
+                problem: "ASU's enterprise brand work needed clearer systems, content structure, and team coordination at scale.",
+                solution: "Built structure across Wrike workflows, Drupal content systems, research, reporting, and asset management to support brand execution at scale.",
+                result: "Supported 600+ projects and 100+ departments through stronger workflows, visibility, and brand consistency.",
+                details: "A closer look at the systems behind ASU&apos;s enterprise brand work. Inside the Chief Brand Office, I contributed across workflow design, website management, research, asset coordination, and reporting to help teams stay aligned and keep brand execution moving.",
+                skills: ["Wrike", "Drupal CMS", "Brand Operations", "Content Systems", "Cross-team Coordination"],
+                tagSkills: ["Workflow Systems", "Brand Research", "Asset Management", "Operations"],
                 delay: 0
               },
               {
                 img: nomadtemp ,
                 title: "Nomad Temporary Housing",
-                problem: "Fortune 1000 clients faced slow response times during high-volume housing requests.",
+                overviewBadge: "Client Experience · Fortune 1000",
+                problem: "High-volume housing requests were slowing response times for Fortune 1000 clients.",
                 solution: "Implemented a prioritization matrix and standardized communication templates.",
-                result: "Managed 500+ client inquiries while maintaining a 98% satisfaction rate through structured CRM workflows.",
+                result: "Handled 500+ inquiries while maintaining a 98% satisfaction rate through structured CRM workflows.",
                 details: "Working directly with Fortune 1000 executives requires high touch and extreme precision. I was responsible for intaking, triaging, and solving massive volumes of temporary housing placements for high-level employees. I implemented a response matrix that cut our time-to-first-reply in half, keeping satisfaction high.",
                 skills: ["Client Experience", "Crisis Management", "Operations", "B2B Support"],
                 delay: 0.15
@@ -1347,9 +1551,10 @@ const Home = () => {
                 img: icustomer ,
                 title: "iCustomer",
                 hasBlog: true,
-                problem: "eCommerce brand lacked a consistent content strategy to drive B2C customer growth and online visibility.",
+                overviewBadge: "Content Strategy · B2C Marketing",
+                problem: "The brand needed a clearer content strategy to grow visibility and connect with B2C audiences.",
                 solution: "Created and managed a unified content strategy across blogs, social media, and email campaigns. Used SEO, content calendars, and audience-specific messaging to connect with the right students.",
-                result: "Developed and executed content across blogs, social media, and email campaigns — optimizing for SEO and lead generation across 3 channels in a fully remote, cross-functional team environment.",
+                result: "Built content across blogs, social media, and email to support SEO, visibility, and lead generation across 3 channels.",
                 details: "The iCustomer initiative was a comprehensive attempt to unify messaging sent out to the student body. I created a consistent editorial calendar, established strict narrative guidelines, and coordinated with the creative team to build supporting visuals. By speaking with 'one voice', we saw a dramatic 45% lift in student engagement.",
                 skills: ["Marketing Coordination", "Copywriting", "Digital Strategy", "Project Management"],
                 tagSkills: ["Content Marketing", "SEO", "eCommerce", "B2C"],
@@ -1402,15 +1607,15 @@ const Home = () => {
                 <div className="p-8 flex-grow flex flex-col pt-8">
                   <h3 className="text-[26px] font-bold text-brand-plum mb-3 leading-tight">{study.title}</h3>
 
-                  {study.title === "Nomad Temporary Housing" && (
+                  {study.overviewBadge && (
                     <div className="mb-5">
                       <span className="inline-block px-3 py-1.5 bg-brand-sage/70 text-brand-plum text-[11px] font-bold rounded-full tracking-[0.14em] uppercase">
-                        Client Experience · Fortune 1000
+                        {study.overviewBadge}
                       </span>
                     </div>
                   )}
-                  
-                  {study.hasBlog && (
+
+                  {!study.overviewBadge && study.hasBlog && (
                     <div className="mb-5">
                       <span className="inline-block px-3 py-1.5 bg-brand-lavender text-brand-plum text-[11px] font-bold rounded-full">
                         Includes Blog Posts
@@ -1421,13 +1626,13 @@ const Home = () => {
                   <div className="space-y-5 flex-grow mb-8">
                     <div>
                       <span className="text-brand-gold font-bold text-[13px] uppercase tracking-wider block mb-1.5">Problem:</span>
-                      <p className="text-brand-charcoal text-[15px] leading-relaxed line-clamp-2 md:line-clamp-none lg:line-clamp-2">
+                      <p className="text-brand-charcoal text-[15px] leading-relaxed">
                         {study.problem}
                       </p>
                     </div>
                     <div>
                       <span className="text-brand-gold font-bold text-[13px] uppercase tracking-wider block mb-1.5">Result:</span>
-                      <p className="text-brand-plum font-medium text-[15px] leading-relaxed line-clamp-2 md:line-clamp-none lg:line-clamp-2">
+                      <p className="text-brand-plum font-medium text-[15px] leading-relaxed">
                         {study.result}
                       </p>
                     </div>
@@ -1480,6 +1685,8 @@ const Home = () => {
               />
               {selectedStudy.title === "Nomad Temporary Housing" ? (
                 <NomadCaseStudyModal study={selectedStudy} onClose={() => setSelectedStudy(null)} />
+              ) : selectedStudy.customType === "brandops" ? (
+                <BrandOperationsCaseStudyModal study={selectedStudy} onClose={() => setSelectedStudy(null)} />
               ) : selectedStudy.customType === "wpc" ? (
                 <WpcCaseStudyModal onClose={() => setSelectedStudy(null)} />
               ) : (
@@ -1687,30 +1894,21 @@ const Home = () => {
       </section>
 
       {/* 7. Testimonials */}
-      <section className="py-24 px-6 md:px-12 bg-brand-lavender/75 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-white/70 to-transparent"></div>
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-brand-plum mb-4">What They Say</h2>
+      <HomeTestimonials />
+
+      {/* 8. Doodle Break */}
+      <section className="bg-brand-cream px-6 py-10 md:px-12">
+        <div className="mx-auto flex max-w-6xl items-center justify-center gap-10">
+          <div className="relative h-[190px] w-[215px] shrink-0">
+            <FloatingDoodle className="left-1/2 top-0 -translate-x-1/2" />
           </div>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid md:grid-cols-2 gap-8">
-            {[
-              { quote: "Vinita consistently goes above and beyond. Her ability to organize chaos into a streamlined process has been invaluable to our brand operations team.", name: "Director of Marketing", title: "Arizona State University" },
-              { quote: "She handles high-pressure client situations with an easy grace. You give her a problem, and she simply figures it out. Highly dependable.", name: "Client Success Manager", title: "Nomad Temporary Housing" }
-            ].map((test, idx) => (
-              <motion.div key={idx} variants={fadeIn} className="bg-brand-white/85 p-8 rounded-[24px] border border-brand-line/70 shadow-[0_18px_40px_rgba(110,93,121,0.1)]">
-                <p className="text-lg italic text-brand-charcoal mb-6 font-serif">"{test.quote}"</p>
-                <div>
-                  <h4 className="font-bold text-brand-plum">{test.name}</h4>
-                  <p className="text-sm text-brand-gold">{test.title}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+          <p className="max-w-[260px] text-center text-2xl font-serif italic leading-snug text-brand-plum md:text-left">
+            Thanks for stopping by my portfolio.
+          </p>
         </div>
       </section>
 
-      {/* 8. Contact Section */}
+      {/* 9. Contact Section */}
       <section id="contact" className="py-24 px-6 md:px-12 bg-brand-cream">
         <div className="max-w-6xl mx-auto bg-brand-white rounded-[32px] overflow-hidden shadow-[0_24px_60px_rgba(110,93,121,0.1)] border border-brand-line/70">
           <div className="grid md:grid-cols-5 h-full">
