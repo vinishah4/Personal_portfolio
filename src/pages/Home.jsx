@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useTransform, animate, useInView, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Lightbulb, Mail, MapPin, X, GraduationCap, Users, Megaphone, Camera, ChevronLeft, ChevronRight, MessageCircle, CheckCheck, Briefcase, FileText, Clock3, Compass, CalendarDays } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import asuBrandPortPhoto from '../assets/Photo/mainport.jpeg';
 
@@ -1235,6 +1235,7 @@ const BrandOperationsCaseStudyModal = ({ study, onClose }) => (
 
 const Home = () => {
   const [selectedStudy, setSelectedStudy] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     if (selectedStudy) {
@@ -1246,6 +1247,26 @@ const Home = () => {
       document.body.style.overflow = 'unset';
     };
   }, [selectedStudy]);
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const targetId = location.hash.replace('#', '');
+    const scrollToTarget = () => {
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    const frameId = window.requestAnimationFrame(scrollToTarget);
+    const timeoutId = window.setTimeout(scrollToTarget, 180);
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      window.clearTimeout(timeoutId);
+    };
+  }, [location.hash]);
 
   return (
     <div className="pt-24">
@@ -1547,7 +1568,7 @@ const Home = () => {
       </section>
 
       {/* 7. Case Studies */}
-      <section id="portfolio" className="py-24 px-6 md:px-12 bg-[linear-gradient(180deg,#f9f4fb_0%,#fcf8f2_100%)]">
+      <section id="portfolio" className="scroll-mt-32 py-24 px-6 md:px-12 bg-[linear-gradient(180deg,#f9f4fb_0%,#fcf8f2_100%)]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif font-bold text-brand-plum mb-4">My Work in Action</h2>
@@ -1946,7 +1967,7 @@ const Home = () => {
       </section>
 
       {/* 9. Contact Section */}
-      <section id="contact" className="py-24 px-6 md:px-12 bg-brand-cream">
+      <section id="contact" className="scroll-mt-32 py-24 px-6 md:px-12 bg-brand-cream">
         <div className="max-w-6xl mx-auto bg-brand-white rounded-[32px] overflow-hidden shadow-[0_24px_60px_rgba(110,93,121,0.1)] border border-brand-line/70">
           <div className="grid md:grid-cols-5 h-full">
             <div className="bg-brand-peach p-12 text-brand-plum md:col-span-2 flex flex-col justify-between">
