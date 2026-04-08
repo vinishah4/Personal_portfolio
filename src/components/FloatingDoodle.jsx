@@ -1,10 +1,29 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useInView } from 'framer-motion';
 
 const FloatingDoodle = ({ className = "" }) => {
   const [isAwake, setIsAwake] = useState(false);
+  const [isActivated, setIsActivated] = useState(false);
+  const rootRef = useRef(null);
+  const isInView = useInView(rootRef, { once: false, margin: "-12% 0px" });
+
+  useEffect(() => {
+    if (!isInView) return undefined;
+
+    setIsActivated(true);
+    setIsAwake(true);
+
+    const timer = window.setTimeout(() => {
+      setIsActivated(false);
+      setIsAwake(false);
+    }, 1400);
+
+    return () => window.clearTimeout(timer);
+  }, [isInView]);
 
   return (
     <div
+      ref={rootRef}
       aria-hidden="true"
       className={`pointer-events-auto absolute h-auto w-[215px] ${className}`}
       style={{ zIndex: 1 }}
@@ -15,6 +34,13 @@ const FloatingDoodle = ({ className = "" }) => {
         .doodle-wrap {
           animation: doodleFloat 3.5s ease-in-out infinite, doodleWobble 3.5s ease-in-out infinite;
           transform-origin: center bottom;
+        }
+
+        .doodle-wrap.doodle-inview {
+          animation:
+            doodleEntrance 1.15s cubic-bezier(0.2, 0.8, 0.2, 1),
+            doodleFloat 3.5s ease-in-out infinite 1.15s,
+            doodleWobble 3.5s ease-in-out infinite 1.15s;
         }
 
         @keyframes doodleFloat {
@@ -41,6 +67,12 @@ const FloatingDoodle = ({ className = "" }) => {
           0%, 42%, 48%, 100% { transform: scaleY(1); }
           45% { transform: scaleY(0.12); }
         }
+
+        @keyframes doodleEntrance {
+          0% { transform: translateY(16px) rotate(-4deg) scale(0.92); opacity: 0; }
+          55% { transform: translateY(-8px) rotate(2deg) scale(1.04); opacity: 1; }
+          100% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 1; }
+        }
       `}</style>
 
       <svg
@@ -49,7 +81,7 @@ const FloatingDoodle = ({ className = "" }) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g className="doodle-wrap" stroke="#181818" strokeLinecap="round" strokeLinejoin="round">
+        <g className={`doodle-wrap ${isActivated ? 'doodle-inview' : ''}`} stroke="#181818" strokeLinecap="round" strokeLinejoin="round">
           <path d="M28 30 C46 18 66 18 86 28" strokeWidth="3.2" strokeDasharray="1 7" />
 
           <circle cx="94" cy="92" r="44" strokeWidth="2.8" />

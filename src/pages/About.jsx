@@ -13,13 +13,15 @@ import whatsNext from  '../assets/Photo/wnport.png';
 const JourneyBloomDoodle = ({ className = '' }) => (
   <motion.div
     initial={{ opacity: 0, y: 12 }}
-    animate={{ opacity: 1, y: [0, -6, 0], x: [0, 4, 0], rotate: [-1, 2, -1] }}
+    whileInView={{ opacity: 1, scale: [0.94, 1.05, 1], y: [10, -8, 0], x: [0, 5, 0], rotate: [-3, 3, -1] }}
     transition={{
       opacity: { duration: 0.6 },
-      y: { duration: 5.8, repeat: Infinity, ease: 'easeInOut' },
-      x: { duration: 7.6, repeat: Infinity, ease: 'easeInOut' },
-      rotate: { duration: 6.4, repeat: Infinity, ease: 'easeInOut' },
+      scale: { duration: 1.1, ease: 'easeOut' },
+      y: { duration: 6, repeat: Infinity, ease: 'easeInOut' },
+      x: { duration: 7.8, repeat: Infinity, ease: 'easeInOut' },
+      rotate: { duration: 6.6, repeat: Infinity, ease: 'easeInOut' },
     }}
+    viewport={{ once: false, margin: '-15% 0px' }}
     className={`pointer-events-none absolute ${className}`}
     aria-hidden="true"
   >
@@ -200,13 +202,13 @@ const About = () => {
 
                 {/* Text Side */}
                 <div className={`w-full md:w-1/2 flex flex-col justify-center text-center md:text-left ${!isEven && 'md:text-right'}`}>
-                  <div className="text-sm md:text-base font-bold tracking-[0.22em] text-brand-gold uppercase mb-1.5">
+                  <div className="text-[1.15rem] md:text-[1.25rem] font-bold tracking-[0.22em] text-brand-gold uppercase mb-1.5">
                     {item.year}
                   </div>
-                  <h3 className="text-2xl md:text-[1.7rem] font-serif text-brand-plum mb-3 lowercase">
+                  <h3 className="text-[1.7rem] md:text-[1.9rem] font-serif text-brand-plum mb-3 lowercase">
                     {item.title}
                   </h3>
-                  <p className="text-brand-charcoal font-serif text-base md:text-[1.02rem] leading-[1.75] max-w-md mx-auto md:mx-0">
+                  <p className="text-brand-charcoal font-serif text-[1.06rem] md:text-[1.12rem] leading-[1.8] max-w-md mx-auto md:mx-0">
                     {item.desc}
                   </p>
                 </div>

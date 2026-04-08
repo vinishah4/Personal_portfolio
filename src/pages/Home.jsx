@@ -1263,14 +1263,14 @@ const Home = () => {
                 <p className="relative text-lg md:text-xl text-brand-charcoal max-w-lg font-sans leading-relaxed">
                   Business Communication graduate focused on branding, marketing strategy, and client engagement. I bring energy, curiosity, and organization to every project.
                 </p>
-                <div className="relative flex flex-wrap gap-4 mt-4">
-                    <a href="#portfolio" className="px-8 py-4 bg-brand-gold text-white rounded-full font-medium hover:bg-brand-gold-deep shadow-[0_16px_35px_rgba(212,163,115,0.22)] cursor-pointer">
+                <div className="relative mt-4 flex gap-3 md:flex-nowrap">
+                    <a href="#portfolio" className="px-6 py-4 bg-brand-gold text-white rounded-full font-medium hover:bg-brand-gold-deep shadow-[0_16px_35px_rgba(212,163,115,0.22)] cursor-pointer whitespace-nowrap">
                       View My Work
                     </a>
-                    <Link to="/about" className="px-8 py-4 border border-brand-line bg-brand-white/70 text-brand-plum rounded-full font-medium hover:bg-brand-lavender/45 transition-all flex items-center gap-2 group cursor-pointer">
+                    <Link to="/about" className="px-6 py-4 border border-brand-line bg-brand-white/70 text-brand-plum rounded-full font-medium hover:bg-brand-lavender/45 transition-all flex items-center gap-2 group cursor-pointer whitespace-nowrap">
                       My Story <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
-                    <Link to="/resume" className="px-8 py-4 border border-brand-line bg-brand-white/70 text-brand-plum rounded-full font-medium hover:bg-brand-blush/45 transition-all flex items-center gap-2 group cursor-pointer">
+                    <Link to="/resume" className="px-6 py-4 border border-brand-line bg-brand-white/70 text-brand-plum rounded-full font-medium hover:bg-brand-blush/45 transition-all flex items-center gap-2 group cursor-pointer whitespace-nowrap">
                       Resume <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
