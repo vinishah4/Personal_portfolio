@@ -1,4 +1,4 @@
-import { Instagram, Linkedin } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -20,14 +20,6 @@ const Footer = () => {
               className="p-2.5 rounded-full bg-brand-lavender text-brand-plum hover:bg-brand-gold hover:text-white transition-all duration-300 cursor-pointer"
             >
               <Linkedin size={20} />
-            </a>
-            <a 
-              href="#" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="p-2.5 rounded-full bg-brand-blush text-brand-plum hover:bg-brand-gold hover:text-white transition-all duration-300 cursor-pointer"
-            >
-              <Instagram size={20} />
             </a>
           </div>
           <p className="text-sm text-brand-charcoal/80">

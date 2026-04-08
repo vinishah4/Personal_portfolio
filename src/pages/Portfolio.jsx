@@ -3,14 +3,23 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, BarChart3, Briefcase, Compass, Presentation, Users } from 'lucide-react';
 
 const featuredCard = {
-  title: 'Strategic SWOT Analysis — Netflix',
-  tag: 'Strategy',
-  description: "A structured strategic analysis translating Netflix's market position, risks, and opportunities into clear decision-ready recommendations.",
-  route: '/portfolio/strategic-swot-analysis-netflix',
+  title: 'Production Assistant — ASU Enterprise Brand Strategy & Management',
+  tag: 'Current Role',
+  description: 'A live case study in brand operations, digital content systems, competitive research, and creative collaboration inside a major university brand team.',
+  route: '/portfolio/asu-production-assistant',
   bg: 'bg-[#EEF1EB]',
 };
 
 const gridCards = [
+  {
+    title: 'Strategic SWOT Analysis — Netflix',
+    tag: 'Strategy',
+    description: "A structured strategic analysis translating Netflix's market position, risks, and opportunities into clear decision-ready recommendations.",
+    route: '/portfolio/strategic-swot-analysis-netflix',
+    tone: 'bg-[#EEF1EB]',
+    tagTone: 'bg-[#DDE8DF] text-[#506454]',
+    icon: <Briefcase size={18} strokeWidth={1.8} />,
+  },
   {
     title: 'Business Insights for Northwind Traders',
     tag: 'Data',
@@ -116,10 +125,10 @@ const Portfolio = () => {
                   </div>
                   <div className="absolute bottom-6 left-6 right-6 grid grid-cols-2 gap-3">
                     {[
-                      ['Framework', 'SWOT'],
-                      ['Focus', 'Growth'],
-                      ['Lens', 'Strategy'],
-                      ['Outcome', 'Decision'],
+                      ['Focus', 'Brand Ops'],
+                      ['Tools', 'Drupal'],
+                      ['Scope', 'Research'],
+                      ['Status', 'Current'],
                     ].map(([label, value]) => (
                       <div key={label} className="rounded-[18px] border border-white/60 bg-white/68 px-4 py-3 backdrop-blur-sm">
                         <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#7A7A7A]">{label}</p>

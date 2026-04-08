@@ -75,7 +75,7 @@ const About = () => {
         >
           <span className="text-sm font-sans font-bold uppercase tracking-[0.28em] text-brand-gold mb-6 block">My Journey</span>
           <h1 className="text-4xl md:text-6xl font-serif text-brand-plum tracking-tight lowercase mb-6">
-            from a cocoon<br />to a butterfly
+            from a cocoon<br />to a butterfly🦋
           </h1>
           <p className="text-lg md:text-xl text-brand-charcoal font-serif italic lowercase tracking-wide">
             this is my journey — growth, change, and becoming.
@@ -84,11 +84,11 @@ const About = () => {
       </section>
 
       {/* 2. Timeline */}
-      <section className="max-w-5xl mx-auto px-6 relative py-12">
+      <section className="max-w-5xl mx-auto px-6 relative py-8 md:py-10">
         {/* Center line (Desktop only) */}
         <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-brand-gold/30 -translate-x-1/2"></div>
 
-        <div className="flex flex-col gap-24 md:gap-32">
+        <div className="flex flex-col gap-14 md:gap-18">
           {timelineData.map((item, idx) => {
             const isEven = idx % 2 === 0;
             return (
@@ -98,25 +98,25 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                className={`flex flex-col md:flex-row items-center gap-6 md:gap-10 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
               >
                 {/* Image Side */}
                 <div className="w-full md:w-1/2 flex justify-center relative">
-                  <div className={`absolute top-1/2 -translate-y-1/2 w-12 h-px bg-brand-gold/40 hidden md:block ${isEven ? '-right-6' : '-left-6'}`}></div>
-                  <div className="w-full max-w-sm aspect-[4/5] overflow-hidden rounded-t-[5rem] rounded-b-3xl shadow-[0_24px_60px_rgba(110,93,121,0.12)] opacity-95 hover:opacity-100 transition-opacity border border-brand-white/70">
+                  <div className={`absolute top-1/2 -translate-y-1/2 w-8 h-px bg-brand-gold/40 hidden md:block ${isEven ? '-right-4' : '-left-4'}`}></div>
+                  <div className="w-full max-w-[16rem] md:max-w-[18rem] aspect-[4/5] overflow-hidden rounded-t-[3.5rem] rounded-b-[1.5rem] shadow-[0_18px_40px_rgba(110,93,121,0.1)] opacity-95 hover:opacity-100 transition-opacity border border-brand-white/70">
                     <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
                   </div>
                 </div>
 
                 {/* Text Side */}
                 <div className={`w-full md:w-1/2 flex flex-col justify-center text-center md:text-left ${!isEven && 'md:text-right'}`}>
-                  <div className="text-xl font-bold tracking-[0.24em] text-brand-gold uppercase mb-2">
+                  <div className="text-sm md:text-base font-bold tracking-[0.22em] text-brand-gold uppercase mb-1.5">
                     {item.year}
                   </div>
-                  <h3 className="text-3xl font-serif text-brand-plum mb-4 lowercase">
+                  <h3 className="text-2xl md:text-[1.7rem] font-serif text-brand-plum mb-3 lowercase">
                     {item.title}
                   </h3>
-                  <p className="text-brand-charcoal font-serif text-lg leading-relaxed max-w-md mx-auto md:mx-0">
+                  <p className="text-brand-charcoal font-serif text-base md:text-[1.02rem] leading-[1.75] max-w-md mx-auto md:mx-0">
                     {item.desc}
                   </p>
                 </div>
@@ -144,9 +144,6 @@ const About = () => {
           <div className="flex gap-6 mt-4">
             <a href="https://www.linkedin.com/in/vinitashah07/" target="_blank" rel="noreferrer" className="text-brand-plum hover:text-brand-gold transition-colors font-sans text-sm font-medium uppercase tracking-widest">
               LinkedIn
-            </a>
-            <a href="#" target="_blank" rel="noreferrer" className="text-brand-plum hover:text-brand-gold transition-colors font-sans text-sm font-medium uppercase tracking-widest">
-              Instagram
             </a>
           </div>
         </motion.div>

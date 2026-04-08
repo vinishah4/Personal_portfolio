@@ -37,6 +37,13 @@ const studies = [
     route: '/portfolio/strategic-swot-analysis-netflix',
     summary: "A structured strategic analysis translating Netflix's market position into decision-ready recommendations.",
   },
+  {
+    id: 'asu-production-assistant',
+    title: 'Production Assistant — ASU Enterprise Brand Strategy & Management',
+    tag: 'Current Role',
+    route: '/portfolio/asu-production-assistant',
+    summary: 'A live case study in brand operations, digital content systems, competitive research, and creative collaboration inside a major university brand team.',
+  },
 ];
 
 const lightCardStyles = {

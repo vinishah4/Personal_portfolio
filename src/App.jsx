@@ -13,6 +13,7 @@ import NorthwindTraders from './pages/NorthwindTraders';
 import WpcFacilitator from './pages/WpcFacilitator';
 import BridgeCareerPlatform from './pages/BridgeCareerPlatform';
 import StrategicSwotNetflix from './pages/StrategicSwotNetflix';
+import AsuProductionAssistant from './pages/AsuProductionAssistant';
 import Resume from './pages/Resume';
 
 
@@ -54,6 +55,7 @@ function App() {
             <Route path="/portfolio/northwind-traders" element={<NorthwindTraders />} />
             <Route path="/portfolio/bridgecareer-platform-strategy" element={<BridgeCareerPlatform />} />
             <Route path="/portfolio/strategic-swot-analysis-netflix" element={<StrategicSwotNetflix />} />
+            <Route path="/portfolio/asu-production-assistant" element={<AsuProductionAssistant />} />
             <Route path="/about" element={<About />} />
             <Route path="/blog/full-funnel-analytics" element={<BlogPost />} />
             <Route path="/blog/marketing-attribution" element={<BlogAttribution />} />

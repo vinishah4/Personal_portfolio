@@ -1,16 +1,17 @@
 import { motion, useMotionValue, useTransform, animate, useInView, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Lightbulb, Mail, MapPin, X, GraduationCap, Calendar, Users, Megaphone, Camera, ChevronLeft, ChevronRight, MessageCircle, CheckCheck, Briefcase, FileText, Clock3, Compass, CalendarDays } from 'lucide-react';
+import { ArrowRight, Lightbulb, Mail, MapPin, X, GraduationCap, Users, Megaphone, Camera, ChevronLeft, ChevronRight, MessageCircle, CheckCheck, Briefcase, FileText, Clock3, Compass, CalendarDays } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
-import asuBrandPortPhoto from '../assets/Photo/mainport.jpeg';
 import placeholder2 from '../assets/Photo/Mainhomephoto/BESTOFBRANDPORT.png';
 import placeholder1 from '../assets/Photo/Mainhomephoto/BGEDITPORT.png';
 import placeholder3 from '../assets/Photo/Mainhomephoto/SAMPLEPROJPORT.png';
 import placeholder4 from '../assets/Photo/Mainhomephoto/WORKBOOKBGPORT.png'; 
+import asuBrandPortPhoto from '../assets/Photo/mainport.jpeg';
 
 import nomadtemp from '../assets/Photo/Mainhomephoto/Nomadtempport.png'; 
 import icustomer from '../assets/Photo/Mainhomephoto/ICSUTPORT.png'; 
 import asu_brand from '../assets/Photo/Mainhomephoto/ASUBRANDPORT.png'; 
+import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader';
 
 
 
@@ -271,6 +272,80 @@ const wpcProcessSteps = [
     label: "Follow Up",
     description: "Checking back in to make sure students stayed on track and felt supported beyond the initial session.",
     bg: "bg-brand-blush/70",
+  },
+];
+
+const whatIDoBestCards = [
+  {
+    id: "01",
+    title: "Project Coordination",
+    description: "Keeping teams aligned and timelines on track — managed 500+ brand initiatives at ASU with 100% on-time delivery.",
+    tags: ["Wrike", "Timeline Management", "Reporting"],
+    color: "bg-[#dfeee3]",
+    icon: CheckCheck,
+  },
+  {
+    id: "02",
+    title: "Client & Customer Service",
+    description: "From Fortune 1000 companies to university students — I handle high-volume interactions with professionalism and care.",
+    tags: ["CRM Tools", "Client Relations", "Problem Solving"],
+    color: "bg-[#f4dfe5]",
+    icon: Users,
+  },
+  {
+    id: "03",
+    title: "Brand & Marketing Operations",
+    description: "From brand audits and competitive research to website content and asset management — I keep brands consistent and campaigns moving.",
+    tags: ["Drupal CMS", "Brand Strategy", "Content Marketing"],
+    color: "bg-[#e6ddf7]",
+    icon: Briefcase,
+  },
+  {
+    id: "04",
+    title: "Content & Digital Marketing",
+    description: "Creating content that connects. Managed blogs, social media, email campaigns, and SEO strategy — bringing both strategic thinking and hands-on execution.",
+    tags: ["SEO", "Social Media", "Email Campaigns"],
+    color: "bg-[#f8e7b6]",
+    icon: Megaphone,
+  },
+];
+
+const currentRoleHoverCards = [
+  {
+    id: "01",
+    title: "Project & Workflow Management",
+    teaser: "Hover to see what I built",
+    description:
+      "Built and scaled Wrike workflows for major ASU brand initiatives, including Sun Devil Athletics — managing and reporting on 600+ projects while creating new workflow systems to improve visibility, coordination, and on-time delivery.",
+    pills: ["Wrike", "Project Tracking", "Reporting", "Documentation", "Cross-team Coordination"],
+    icon: CheckCheck,
+    hoverTone: "hover:bg-[#e3efe4] hover:border-[#99bea0]",
+    pillTone: "bg-[#cfe0d2] text-[#4f6453]",
+    dividerTone: "group-hover:bg-[#99bea0]",
+  },
+  {
+    id: "02",
+    title: "Digital & Website Management",
+    teaser: "Hover to see what I managed",
+    description:
+      "Maintained and updated the ASU Brand Guide website using Drupal CMS — aligning web content with internal brand standards and refining backend pages for consistency, usability, and accessibility.",
+    pills: ["Drupal CMS", "Webspark", "Content Management", "Brand Standards", "Accessibility"],
+    icon: FileText,
+    hoverTone: "hover:bg-[#ece6f7] hover:border-[#b4a9d2]",
+    pillTone: "bg-[#ddd4ef] text-[#60557b]",
+    dividerTone: "group-hover:bg-[#b4a9d2]",
+  },
+  {
+    id: "03",
+    title: "Cross-Functional Execution",
+    teaser: "Hover to see how I collaborated",
+    description:
+      "Collaborated with design, marketing, and media teams across ASU to support brand campaigns, multimedia planning, and internal reporting — improving project visibility and ensuring on-time asset delivery.",
+    pills: ["Team Collaboration", "Brand Campaigns", "Stakeholder Alignment", "Asset Delivery", "Media Support"],
+    icon: Users,
+    hoverTone: "hover:bg-[#f7e8de] hover:border-[#d7b39a]",
+    pillTone: "bg-[#efd4c3] text-[#7a5b45]",
+    dividerTone: "group-hover:bg-[#d7b39a]",
   },
 ];
 
@@ -951,58 +1026,71 @@ const Home = () => {
 
   return (
     <div className="pt-24">
+      <style>{`
+        @keyframes arrow-nudge {
+          0%, 100% { transform: translateX(0); }
+          50% { transform: translateX(4px); }
+        }
+      `}</style>
       {/* 1. Hero Section */}
-      <section className="min-h-[90vh] flex items-center bg-[linear-gradient(180deg,#fffaf8_0%,#fdf4f7_48%,#f9f1f3_100%)] px-6 md:px-12 relative overflow-hidden">
-        {/* Lily-inspired pastel background shapes */}
-        <div className="absolute top-[-5rem] left-[8%] h-[280px] w-[280px] rounded-full bg-[#f8d9e5]/60 blur-3xl -z-10" />
-        <div className="absolute top-[6rem] left-[22%] h-[210px] w-[210px] rounded-full bg-[#fbe7ee]/80 blur-2xl -z-10" />
-        <div className="absolute bottom-[-7rem] left-[-4rem] h-[380px] w-[380px] rounded-full bg-[#f6d3df]/55 blur-3xl -z-10" />
-        <div className="absolute top-[10%] right-[6%] h-[320px] w-[320px] rounded-full bg-[#f7e6ec]/70 blur-3xl -z-10" />
-        <div className="absolute bottom-[12%] right-[18%] h-[180px] w-[180px] rounded-full bg-[#f4d7e6]/60 blur-2xl -z-10" />
-        <div className="absolute left-[12%] top-[18%] h-40 w-24 rotate-[-18deg] rounded-[999px] bg-white/35 blur-xl -z-10" />
-        <div className="absolute left-[18%] top-[8%] h-36 w-20 rotate-[16deg] rounded-[999px] bg-[#ffeef4]/70 blur-xl -z-10" />
-        <div className="absolute left-[26%] top-[22%] h-44 w-24 rotate-[28deg] rounded-[999px] bg-[#f9dfe9]/50 blur-xl -z-10" />
-        <div className="absolute inset-x-0 top-10 mx-auto h-px max-w-6xl bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent"></div>
+      <HeroSection
+        className="px-0"
+        maxWidth="max-w-7xl"
+        contentClassName="md:px-12"
+        colors={["#f6dce5", "#f0e7fb", "#fde6d7", "#fff4ea", "#e4efe8", "#f8efe6"]}
+        distortion={1}
+        swirl={0.58}
+        speed={0.34}
+        offsetX={0.03}
+        veilOpacity="bg-white/34"
+      >
+        <div className="relative">
+          <div className="absolute inset-x-0 top-10 mx-auto h-px max-w-6xl bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent"></div>
+          <div className="grid min-h-[90vh] items-center gap-12 py-16 md:grid-cols-2">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn}
+              className="relative flex flex-col gap-6 rounded-[36px] border border-white/65 bg-white/45 p-8 shadow-[0_24px_60px_rgba(170,119,140,0.08)] backdrop-blur-[3px] md:p-10"
+            >
+              <div className="pointer-events-none absolute inset-0 rounded-[36px] bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.6),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(247,217,229,0.28),transparent_38%)]" />
+              <h1 className="relative text-5xl md:text-7xl font-serif font-bold text-brand-plum leading-tight">
+                I show up.<br />
+                <span className="text-brand-gold italic">I figure it out.</span><br />
+                I make it better.
+              </h1>
+              <p className="relative text-lg md:text-xl text-brand-charcoal max-w-lg font-sans leading-relaxed">
+                Business Communication graduate focused on branding, marketing strategy, and client engagement. I bring energy, curiosity, and organization to every project.
+              </p>
+              <div className="relative flex flex-wrap gap-4 mt-4">
+                  <a href="#portfolio" className="px-8 py-4 bg-brand-gold text-white rounded-full font-medium hover:bg-brand-gold-deep shadow-[0_16px_35px_rgba(212,163,115,0.22)] cursor-pointer">
+                    View My Work
+                  </a>
+                  <Link to="/about" className="px-8 py-4 border border-brand-line bg-brand-white/70 text-brand-plum rounded-full font-medium hover:bg-brand-lavender/45 transition-all flex items-center gap-2 group cursor-pointer">
+                    My Story <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <Link to="/resume" className="px-8 py-4 border border-brand-line bg-brand-white/70 text-brand-plum rounded-full font-medium hover:bg-brand-blush/45 transition-all flex items-center gap-2 group cursor-pointer">
+                    Resume <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
 
-        <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial="hidden" animate="visible" variants={fadeIn}
-            className="relative flex flex-col gap-6 rounded-[36px] border border-white/65 bg-white/45 p-8 shadow-[0_24px_60px_rgba(170,119,140,0.08)] backdrop-blur-[3px] md:p-10"
-          >
-            <div className="pointer-events-none absolute inset-0 rounded-[36px] bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.6),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(247,217,229,0.28),transparent_38%)]" />
-            <h1 className="relative text-5xl md:text-7xl font-serif font-bold text-brand-plum leading-tight">
-              I show up.<br />
-              <span className="text-brand-gold italic">I figure it out.</span><br />
-              I make it better.
-            </h1>
-            <p className="relative text-lg md:text-xl text-brand-charcoal max-w-lg font-sans leading-relaxed">
-              Business Communication graduate focused on branding, marketing strategy, and client engagement. I bring energy, curiosity, and organization to every project.
-            </p>
-            <div className="relative flex flex-wrap gap-4 mt-4">
-              <a href="#portfolio" className="px-8 py-4 bg-brand-gold text-white rounded-full font-medium hover:bg-brand-gold-deep shadow-[0_16px_35px_rgba(212,163,115,0.22)] cursor-pointer">
-                View My Work
-              </a>
-              <Link to="/about" className="px-8 py-4 border border-brand-line bg-brand-white/70 text-brand-plum rounded-full font-medium hover:bg-brand-lavender/45 transition-all flex items-center gap-2 group cursor-pointer">
-                My Story <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link to="/resume" className="px-8 py-4 border border-brand-line bg-brand-white/70 text-brand-plum rounded-full font-medium hover:bg-brand-blush/45 transition-all flex items-center gap-2 group cursor-pointer">
-                Resume <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}
-            className="relative h-[500px] w-full rounded-[32px] overflow-hidden shadow-[0_32px_70px_rgba(110,93,121,0.16)] border border-brand-white/70"
-          >
-            <img
-              src={asuBrandPortPhoto}
-              alt="Vinita Shah Professional Portrait"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#4a3f55]/30 via-[#4a3f55]/5 to-transparent"></div>
-          </motion.div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="relative h-[500px] w-full rounded-[32px] overflow-hidden shadow-[0_32px_70px_rgba(110,93,121,0.16)] border border-brand-white/70"
+            >
+              <img
+                src={asuBrandPortPhoto}
+                alt="Vinita Shah Professional Portrait"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#4a3f55]/30 via-[#4a3f55]/5 to-transparent"></div>
+            </motion.div>
+          </div>
         </div>
-      </section>
+      </HeroSection>
 
       {/* 2. Stats Bar */}
       <section className="bg-brand-white py-12 px-6">
@@ -1012,8 +1100,8 @@ const Home = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 rounded-[28px] border border-brand-line/70 bg-brand-peach/45 px-4 py-8 md:px-8 md:py-10 shadow-[0_20px_45px_rgba(110,93,121,0.08)] divide-x divide-brand-gold/15 text-center"
           >
             {[
-              { number: 500, suffix: "+", label: "Projects Managed" },
-              { number: 40, suffix: "+", label: "Students Mentored" },
+              { number: 600, suffix: "+", label: "Projects Managed" },
+              { number: 40, suffix: "", label: "Students Mentored" },
               { number: 1000, suffix: "", label: "Fortune Clients" },
               { number: 4, suffix: "+", label: "Years Experience" }
             ].map((stat, idx) => (
@@ -1049,229 +1137,182 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Education - Floating Pill Layout */}
-      <section className="py-16 md:py-20 px-6 md:px-12 relative overflow-hidden bg-brand-cream-soft">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Title */}
-          <div className="text-center mb-12 md:mb-16 relative z-10">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-plum mb-4">
-              Education
-            </h2>
-            <svg className="w-32 h-2 mx-auto text-brand-gold opacity-70" viewBox="0 0 100 10" preserveAspectRatio="none">
-              <path d="M0,5 Q50,0 100,5" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
-            </svg>
-          </div>
-
-          <div className="flex flex-col md:flex-row gap-8 relative z-10">
-
-            {/* ASU Pill */}
+      {/* 4. Current Role */}
+      <section className="bg-brand-cream-soft px-6 md:px-12">
+        <div className="max-w-7xl mx-auto border-y border-brand-line/70 py-16 md:py-20">
+          <div className="grid gap-10 md:gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 items-start">
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="w-full md:w-1/2 flex justify-center md:justify-end md:pb-10"
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="max-w-xl"
             >
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="relative bg-gradient-to-br from-brand-lavender to-brand-blush p-8 md:p-10 rounded-[2.5rem] md:rounded-[3.5rem] shadow-[0_20px_50px_rgba(110,93,121,0.1)] border border-brand-white/60 flex flex-col items-center text-center max-w-md w-full"
-              >
-                <div className="w-14 h-14 rounded-full bg-brand-white/70 flex items-center justify-center mb-5 shadow-sm">
-                  <GraduationCap className="text-brand-plum" size={28} />
-                </div>
-
-                <h3 className="text-xl md:text-2xl font-bold text-brand-plum leading-tight mb-2 font-serif">
-                  B.A. in Business Communication
-                </h3>
-                <p className="text-base text-brand-plum/80 font-medium mb-5">
-                  ASU W.P. Carey School of Business
-                </p>
-
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="px-3 py-1 bg-brand-white rounded-full text-brand-plum text-[11px] font-bold uppercase tracking-wider shadow-sm">
-                    In Progress
-                  </div>
-                  <span className="text-brand-plum/60 font-bold text-sm">2026</span>
-                </div>
-
-                <div className="flex items-center gap-1.5 text-brand-plum/60 text-sm mb-6">
-                  <MapPin size={16} /> Tempe, AZ
-                </div>
-
-                <div className="flex flex-wrap justify-center gap-2 mt-auto">
-                  {["Brand Operations", "Marketing Coordination", "Consumer Behavior", "Strategic Management"].map(tag => (
-                    <span key={tag} className="px-3 py-1.5 bg-brand-white/60 backdrop-blur-sm rounded-full text-brand-plum text-[11px] font-bold tracking-wide">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* OCC Pill */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              className="w-full md:w-1/2 flex justify-center md:justify-start md:pt-20 md:pl-6"
-            >
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="relative bg-gradient-to-br from-brand-sage to-brand-peach p-8 md:p-10 rounded-[2.5rem] md:rounded-[3.5rem] shadow-[0_20px_50px_rgba(110,93,121,0.1)] border border-brand-white/60 flex flex-col items-center text-center max-w-md w-full"
-              >
-                <div className="w-14 h-14 rounded-full bg-brand-white/70 flex items-center justify-center mb-5 shadow-sm">
-                  <GraduationCap className="text-brand-plum" size={28} />
-                </div>
-
-                <h3 className="text-xl md:text-2xl font-bold text-brand-plum leading-tight mb-2 font-serif">
-                  A.A. in Business Administration
-                </h3>
-                <p className="text-base text-brand-plum/80 font-medium mb-5">
-                  Orange Coast College
-                </p>
-
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="px-3 py-1 bg-brand-white rounded-full text-brand-plum text-[11px] font-bold uppercase tracking-wider shadow-sm">
-                    Completed
-                  </div>
-                  <span className="text-brand-plum/60 font-bold text-sm">2024</span>
-                </div>
-
-                <div className="flex items-center gap-1.5 text-brand-plum/60 text-sm mb-6">
-                  <MapPin size={16} /> Costa Mesa, CA
-                </div>
-
-                <div className="flex flex-wrap justify-center gap-2 mt-auto">
-                  {["Marketing Principles", "Business Writing", "Organizational Communication", "Customer Relations"].map(tag => (
-                    <span key={tag} className="px-3 py-1.5 bg-brand-white/60 backdrop-blur-sm rounded-full text-brand-plum text-[11px] font-bold tracking-wide">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            </motion.div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Skills Section */}
-      <section className="py-24 px-6 md:px-12 bg-brand-white">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-            <h2 className="text-4xl font-serif font-bold text-brand-plum mb-6">Expertise in Action</h2>
-            <p className="text-brand-charcoal mb-8 text-lg">A combination of hard technical skills and refined soft skills that drive projects from conception to completion.</p>
-          </motion.div>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="flex flex-col gap-6 rounded-[28px] bg-brand-cream p-8 shadow-[0_20px_45px_rgba(110,93,121,0.08)] border border-brand-line/60">
-            {[
-              { skill: "Project Management", val: 97 },
-              { skill: "Cross-team Communication", val: 99 },
-              { skill: "Client & Customer Support", val: 98 },
-              { skill: "Brand Operations", val: 95 },
-              { skill: "Content Marketing", val: 92 },
-              { skill: "CMS & Digital Tools", val: 90 },
-            ].map((item, idx) => (
-              <div key={idx} className="flex flex-col gap-2">
-                <div className="flex justify-between font-medium">
-                  <span className="text-brand-plum">{item.skill}</span>
-                  <span className="text-brand-gold">{item.val}%</span>
-                </div>
-                <div className="w-full bg-brand-lavender/55 h-3 rounded-full overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }} whileInView={{ width: `${item.val}%` }}
-                    transition={{ duration: 1, ease: "easeOut" }} viewport={{ once: true }}
-                    className="h-full bg-brand-gold rounded-full"
-                  />
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 5. Services - Stacked Scrolling Cards */}
-      <section className="py-24 md:py-32 px-6 md:px-12 bg-brand-blush/45 relative">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 relative">
-
-          {/* Left Panel: Sticky */}
-          <div className="lg:w-1/3 relative">
-            <div className="sticky top-32 flex flex-col gap-6">
-              <h2 className="text-4xl md:text-[38px] font-serif font-bold text-brand-plum leading-tight">What I Do Best</h2>
-              <p className="text-[16px] text-brand-charcoal max-w-[420px] leading-relaxed">
-                Combining strategy, operational rigor, and deep empathy for the client experience to deliver measurable impact.
+              <span className="text-sm font-bold tracking-[0.28em] text-brand-charcoal/55 uppercase">Currently Working At</span>
+              <h2 className="mt-4 text-4xl md:text-5xl font-serif font-bold text-brand-plum leading-tight">Production Assistant</h2>
+              <p className="mt-4 text-lg md:text-[19px] font-medium text-brand-plum">
+                ASU Enterprise Brand Strategy &amp; Management
               </p>
-              <div className="mt-4">
-                <a href="#portfolio" className="inline-flex items-center justify-center px-8 py-3.5 border border-brand-line bg-brand-white/70 text-brand-plum rounded-full font-medium hover:bg-brand-peach/65 transition-colors cursor-pointer">
-                  Learn More
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Panel: Scrolling Cards */}
-          <div className="lg:w-2/3 flex flex-col gap-12 md:gap-16 relative pb-24">
-            {[
-              {
-                num: "01",
-                icon: <Calendar size={28} strokeWidth={1.5} />,
-                title: "Marketing Coordination",
-                desc: "Orchestrating campaign timelines, managing cross-functional assets, and ensuring seamless execution. Managed 500+ marketing projects at ASU using Wrike and structured project tracking.",
-                color: "bg-brand-sage"
-              },
-              {
-                num: "02",
-                icon: <Lightbulb size={28} strokeWidth={1.5} />,
-                title: "Brand Operations",
-                desc: "Streamlining brand processes, organizing asset management, and safeguarding brand integrity. Maintained ASU's live brand website and kept standards consistent across every platform.",
-                color: "bg-brand-blush"
-              },
-              {
-                num: "03",
-                icon: <Users size={28} strokeWidth={1.5} />,
-                title: "Client Experience",
-                desc: "Building trust through every interaction. Supported Fortune 1000 clients at Nomad Temporary Housing with CRM workflows, high-volume service coordination, and a 98% satisfaction rate.",
-                color: "bg-brand-lavender"
-              },
-              {
-                num: "04",
-                icon: <Megaphone size={28} strokeWidth={1.5} />,
-                title: "Content & Digital Marketing",
-                desc: "Creating content that connects and converts. Managed blogs, social media, email campaigns, and SEO strategy at iCustomer — bringing both strategic thinking and hands-on execution.",
-                color: "bg-brand-peach"
-              },
-            ].map((srv, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className={`sticky w-full ${srv.color} p-10 md:p-14 rounded-[2.5rem] shadow-[0_20px_50px_rgba(110,93,121,0.1)] border border-brand-white/60 flex flex-col gap-8 flex-shrink-0 transition-transform`}
-                style={{ top: `calc(15vh + ${idx * 40}px)` }}
+              <p className="mt-2 text-sm md:text-[15px] text-brand-charcoal/65 uppercase tracking-[0.12em]">
+                Oct 2025 - Present · Tempe, AZ
+              </p>
+              <p className="mt-6 text-[16px] md:text-[17px] leading-[1.9] text-brand-charcoal">
+                Contributing to real brand strategy at one of the largest universities in the US — working alongside creative directors on campaigns, digital content, and brand operations.
+              </p>
+              <Link
+                to="/portfolio/asu-production-assistant"
+                className="mt-8 inline-flex items-center gap-2 text-brand-plum font-semibold hover:text-brand-gold transition-colors underline decoration-2 underline-offset-4"
               >
-                <div className="flex justify-between items-start">
-                  <div className="w-16 h-16 rounded-full border border-brand-plum/10 bg-brand-white/45 flex items-center justify-center text-brand-plum shrink-0">
-                    {srv.icon}
-                  </div>
-                  <span className="text-[13px] font-medium text-brand-charcoal/80">
-                    ({srv.num})
-                  </span>
-                </div>
-                <div>
-                  <h3 className="text-[22px] font-bold text-brand-plum mb-4">{srv.title}</h3>
-                  <p className="text-[15px] text-brand-charcoal leading-[1.7]">{srv.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                See Full Experience <ArrowRight size={18} className="transition-transform" />
+              </Link>
+            </motion.div>
 
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.65, ease: "easeOut", delay: 0.08 }}
+              className="grid grid-cols-1 gap-4 md:grid-cols-3"
+            >
+              {currentRoleHoverCards.map((card) => {
+                const Icon = card.icon;
+
+                return (
+                  <div
+                    key={card.id}
+                    className={`group min-h-[320px] rounded-[1.5rem] border border-brand-line/60 bg-[#f8f5ef] p-5 shadow-[0_16px_35px_rgba(110,93,121,0.06)] transition-all duration-300 ease-in-out hover:-translate-y-2 ${card.hoverTone}`}
+                  >
+                    <div className="flex h-full flex-col">
+                      <div className="flex items-start justify-between gap-3">
+                        <span className="text-[13px] font-bold tracking-[0.22em] text-brand-charcoal/60 transition-all duration-300 ease-in-out group-hover:opacity-0 group-hover:-translate-y-1">
+                          {card.id}
+                        </span>
+                        <div className="flex h-10 w-10 items-center justify-center rounded-[1rem] border border-brand-line/55 bg-brand-white/85 text-brand-plum shadow-sm transition-colors duration-300 ease-in-out">
+                          <Icon size={18} strokeWidth={1.8} />
+                        </div>
+                      </div>
+
+                      <div className="mt-5 flex flex-1 flex-col">
+                        <h3 className="text-[22px] font-serif font-bold leading-tight text-brand-plum">
+                          {card.title}
+                        </h3>
+
+                        <div className="mt-6 flex-1">
+                          <div className="transition-all duration-300 ease-in-out group-hover:opacity-0 group-hover:-translate-y-2">
+                            <p className="inline-flex items-center gap-2 text-[15px] font-medium text-brand-charcoal">
+                              {card.teaser}
+                              <span className="inline-block animate-[arrow-nudge_1.2s_ease-in-out_infinite]">
+                                →
+                              </span>
+                            </p>
+                          </div>
+
+                          <div className="mt-2 grid transition-all duration-300 ease-in-out [grid-template-rows:0fr] group-hover:[grid-template-rows:1fr]">
+                            <div className="overflow-hidden">
+                              <div className="translate-y-2 opacity-0 transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
+                                <div className={`mb-4 mt-1 h-px w-full bg-transparent transition-colors duration-300 ${card.dividerTone}`} />
+                                <p className="text-[14px] leading-[1.75] text-brand-charcoal">
+                                  {card.description}
+                                </p>
+                                <div className="mt-5 flex flex-wrap gap-2">
+                                  {card.pills.map((pill) => (
+                                    <span
+                                      key={pill}
+                                      className={`rounded-full px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.12em] ${card.pillTone}`}
+                                    >
+                                      {pill}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* 6. Case Studies */}
+      {/* 5. What I Do Best */}
+      <section className="py-24 md:py-28 px-6 md:px-12 bg-brand-cream-soft">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="lg:w-1/3 relative"
+          >
+            <div className="lg:sticky lg:top-32 flex flex-col gap-6 max-w-xl">
+              <span className="text-sm font-bold tracking-[0.28em] text-brand-gold uppercase">What I Do Best</span>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-plum leading-tight">What I Do Best</h2>
+              <p className="text-[17px] md:text-lg leading-[1.85] text-brand-charcoal">
+                Combining strategy, operational discipline, and genuine care for people — I bring both the hard skills and the human touch to every team I join.
+              </p>
+              <a
+                href="#portfolio"
+                className="inline-flex w-fit items-center justify-center px-8 py-3.5 bg-brand-gold text-white rounded-full font-medium shadow-[0_14px_30px_rgba(212,163,115,0.24)] hover:bg-brand-gold-deep transition-colors cursor-pointer"
+              >
+                See My Work
+              </a>
+            </div>
+          </motion.div>
+
+          <div className="lg:w-2/3 flex flex-col gap-10 md:gap-14 relative pb-20">
+            {whatIDoBestCards.map((card, idx) => {
+              const Icon = card.icon;
+
+              return (
+                <motion.div
+                  key={card.id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className={`${card.color} sticky w-full rounded-[2.5rem] border border-brand-white/80 p-8 md:p-10 shadow-[0_20px_50px_rgba(110,93,121,0.1)] flex flex-col gap-7`}
+                  style={{ top: `calc(15vh + ${idx * 34}px)` }}
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="w-14 h-14 rounded-[1.25rem] bg-brand-white/60 border border-brand-white/80 flex items-center justify-center text-brand-plum shadow-sm shrink-0">
+                      <Icon size={24} strokeWidth={1.8} />
+                    </div>
+                    <span className="text-[13px] font-semibold tracking-[0.18em] text-brand-charcoal/75">
+                      ({card.id})
+                    </span>
+                  </div>
+
+                  <div>
+                    <h3 className="text-[24px] md:text-[26px] font-serif font-bold text-brand-plum mb-4 leading-tight">
+                      {card.title}
+                    </h3>
+                    <p className="text-[15px] md:text-base text-brand-charcoal leading-[1.8] max-w-[36rem]">
+                      {card.description}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2.5">
+                    {card.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1.5 rounded-full bg-brand-white/62 text-brand-plum text-[11px] font-bold tracking-[0.12em] uppercase"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Case Studies */}
       <section id="portfolio" className="py-24 px-6 md:px-12 bg-brand-cream-soft">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -1293,6 +1334,16 @@ const Home = () => {
                 delay: 0
               },
               {
+                img: nomadtemp ,
+                title: "Nomad Temporary Housing",
+                problem: "Fortune 1000 clients faced slow response times during high-volume housing requests.",
+                solution: "Implemented a prioritization matrix and standardized communication templates.",
+                result: "Managed 500+ client inquiries while maintaining a 98% satisfaction rate through structured CRM workflows.",
+                details: "Working directly with Fortune 1000 executives requires high touch and extreme precision. I was responsible for intaking, triaging, and solving massive volumes of temporary housing placements for high-level employees. I implemented a response matrix that cut our time-to-first-reply in half, keeping satisfaction high.",
+                skills: ["Client Experience", "Crisis Management", "Operations", "B2B Support"],
+                delay: 0.15
+              },
+              {
                 img: icustomer ,
                 title: "iCustomer",
                 hasBlog: true,
@@ -1302,7 +1353,7 @@ const Home = () => {
                 details: "The iCustomer initiative was a comprehensive attempt to unify messaging sent out to the student body. I created a consistent editorial calendar, established strict narrative guidelines, and coordinated with the creative team to build supporting visuals. By speaking with 'one voice', we saw a dramatic 45% lift in student engagement.",
                 skills: ["Marketing Coordination", "Copywriting", "Digital Strategy", "Project Management"],
                 tagSkills: ["Content Marketing", "SEO", "eCommerce", "B2C"],
-                delay: 0.15,
+                delay: 0.3,
                 blogs: [
                   {
                     title: "Full Funnel Analytics in Music Streaming Platforms 🎵📊",
@@ -1323,16 +1374,6 @@ const Home = () => {
                     link: "/blog/minecraft-data-foundation"
                   }
                 ]
-              },
-              {
-                img: nomadtemp ,
-                title: "Nomad Temporary Housing",
-                problem: "Fortune 1000 clients faced slow response times during high-volume housing requests.",
-                solution: "Implemented a prioritization matrix and standardized communication templates.",
-                result: "Managed 500+ client inquiries while maintaining a 98% satisfaction rate through structured CRM workflows.",
-                details: "Working directly with Fortune 1000 executives requires high touch and extreme precision. I was responsible for intaking, triaging, and solving massive volumes of temporary housing placements for high-level employees. I implemented a response matrix that cut our time-to-first-reply in half, keeping satisfaction high.",
-                skills: ["Client Experience", "Crisis Management", "Operations", "B2B Support"],
-                delay: 0.3
               }
             ].map((study, idx) => (
               <motion.div 
@@ -1539,6 +1580,110 @@ const Home = () => {
             </div>
           )}
         </AnimatePresence>
+      </section>
+
+      {/* Education - Floating Pill Layout */}
+      <section className="py-10 md:py-12 px-6 md:px-12 relative overflow-hidden bg-brand-cream-soft">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8 md:mb-10 relative z-10">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-brand-plum mb-3">
+              Education
+            </h2>
+            <svg className="w-24 h-2 mx-auto text-brand-gold opacity-70" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <path d="M0,5 Q50,0 100,5" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
+            </svg>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-5 md:gap-6 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="w-full md:w-1/2 flex justify-center md:justify-end"
+            >
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="relative bg-gradient-to-br from-brand-lavender to-brand-blush p-6 md:p-7 rounded-[2rem] md:rounded-[2.5rem] shadow-[0_18px_40px_rgba(110,93,121,0.09)] border border-brand-white/60 flex flex-col items-center text-center max-w-[22rem] w-full"
+              >
+                <div className="w-12 h-12 rounded-full bg-brand-white/70 flex items-center justify-center mb-4 shadow-sm">
+                  <GraduationCap className="text-brand-plum" size={24} />
+                </div>
+
+                <h3 className="text-lg md:text-xl font-bold text-brand-plum leading-tight mb-1.5 font-serif">
+                  B.A. in Business Communication
+                </h3>
+                <p className="text-sm md:text-[15px] text-brand-plum/80 font-medium mb-4">
+                  ASU W.P. Carey School of Business
+                </p>
+
+                <div className="flex items-center gap-2.5 mb-4">
+                  <div className="px-2.5 py-1 bg-brand-white rounded-full text-brand-plum text-[10px] font-bold uppercase tracking-wider shadow-sm">
+                    In Progress
+                  </div>
+                  <span className="text-brand-plum/60 font-bold text-sm">2026</span>
+                </div>
+
+                <div className="flex items-center gap-1.5 text-brand-plum/60 text-sm mb-4">
+                  <MapPin size={14} /> Tempe, AZ
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-1.5 mt-auto">
+                  {["Brand Operations", "Marketing Coordination", "Consumer Behavior", "Strategic Management"].map(tag => (
+                    <span key={tag} className="px-2.5 py-1 bg-brand-white/60 backdrop-blur-sm rounded-full text-brand-plum text-[10px] font-bold tracking-wide">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="w-full md:w-1/2 flex justify-center md:justify-start md:pt-10 md:pl-2"
+            >
+              <motion.div
+                animate={{ y: [0, 6, 0] }}
+                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="relative bg-gradient-to-br from-brand-sage to-brand-peach p-6 md:p-7 rounded-[2rem] md:rounded-[2.5rem] shadow-[0_18px_40px_rgba(110,93,121,0.09)] border border-brand-white/60 flex flex-col items-center text-center max-w-[22rem] w-full"
+              >
+                <div className="w-12 h-12 rounded-full bg-brand-white/70 flex items-center justify-center mb-4 shadow-sm">
+                  <GraduationCap className="text-brand-plum" size={24} />
+                </div>
+
+                <h3 className="text-lg md:text-xl font-bold text-brand-plum leading-tight mb-1.5 font-serif">
+                  A.S. in Business Administration
+                </h3>
+                <p className="text-sm md:text-[15px] text-brand-plum/80 font-medium mb-4">
+                  Orange Coast College
+                </p>
+
+                <div className="flex items-center gap-2.5 mb-4">
+                  <div className="px-2.5 py-1 bg-brand-white rounded-full text-brand-plum text-[10px] font-bold uppercase tracking-wider shadow-sm">
+                    Completed
+                  </div>
+                  <span className="text-brand-plum/60 font-bold text-sm">2024</span>
+                </div>
+
+                <div className="flex items-center gap-1.5 text-brand-plum/60 text-sm mb-4">
+                  <MapPin size={14} /> Costa Mesa, CA
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-1.5 mt-auto">
+                  {["Marketing Principles", "Business Writing", "Organizational Communication", "Customer Relations"].map(tag => (
+                    <span key={tag} className="px-2.5 py-1 bg-brand-white/60 backdrop-blur-sm rounded-full text-brand-plum text-[10px] font-bold tracking-wide">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* 7. Testimonials */}
