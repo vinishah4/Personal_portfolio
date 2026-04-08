@@ -15,7 +15,7 @@ dist-ssr
 *.codex
 .agent
 .codex
-/src/assets/Photo/*
+/src/assets/Photo/.DS_Store
 
 # Editor directories and files
 .vscode/*
