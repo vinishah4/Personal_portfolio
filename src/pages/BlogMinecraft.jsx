@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import CharacterFigure from '../components/CharacterFigure';
 
 const BlogMinecraft = () => {
   const { pathname } = useLocation();
@@ -31,6 +32,12 @@ const BlogMinecraft = () => {
           src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop" 
           alt="Minecraft block layout" 
           className="w-full h-full object-cover"
+        />
+        <CharacterFigure
+          src="/characters/blog-reading.png"
+          alt="Illustrated Vinita reading"
+          className="character-breath character-fade-in-delayed hair-sway absolute bottom-[-22px] right-6 hidden h-[160px] w-[160px] md:block"
+          imgClassName="h-full w-full object-contain"
         />
         <div
           className="absolute inset-0 flex flex-col justify-center px-6 md:px-12 text-center md:text-left"

@@ -752,15 +752,15 @@ const NomadCaseStudyModal = ({ study, onClose }) => (
 
         <section className="grid md:grid-cols-3 gap-6 bg-brand-cream border border-brand-line/70 p-8 rounded-[24px]">
           <div>
-            <span className="font-bold text-brand-gold block mb-2 text-sm uppercase tracking-wider">Problem</span>
+            <span className="font-bold text-brand-gold block mb-2 text-sm uppercase tracking-wider">Opportunity</span>
             <p className="text-brand-charcoal text-base leading-[1.8]">{study.problem}</p>
           </div>
           <div>
-            <span className="font-bold text-brand-plum block mb-2 text-sm uppercase tracking-wider">Solution</span>
+            <span className="font-bold text-brand-plum block mb-2 text-sm uppercase tracking-wider">Approach</span>
             <p className="text-brand-charcoal text-base leading-[1.8]">Implemented a prioritization matrix and standardized communication templates.</p>
           </div>
           <div>
-            <span className="font-bold text-brand-gold block mb-2 text-sm uppercase tracking-wider">Result</span>
+            <span className="font-bold text-brand-gold block mb-2 text-sm uppercase tracking-wider">Implementation</span>
             <p className="text-brand-plum font-bold text-xl leading-tight">{study.result}</p>
           </div>
         </section>
@@ -1406,13 +1406,14 @@ const Home = () => {
               <span className="text-sm font-extrabold tracking-[0.28em] text-brand-plum/70 uppercase">Currently Working At</span>
               <h2 className="mt-4 text-4xl md:text-5xl font-serif font-bold text-brand-plum leading-tight">Production Assistant</h2>
               <p className="mt-4 text-lg md:text-[19px] font-medium text-brand-plum">
-                ASU Chief Brand Office — Enterprise Brand Strategy &amp; Management
+                Enterprise Brand Strategy &amp; Management
               </p>
               <p className="mt-2 text-sm md:text-[15px] font-bold text-brand-plum/70 uppercase tracking-[0.12em]">
                 Oct 2025 - Present · Tempe, AZ
               </p>
               <p className="mt-6 text-[16px] md:text-[17px] leading-[1.9] text-brand-charcoal">
-                Working within ASU&apos;s Chief Brand Office, I support the Enterprise Brand Strategy &amp; Management team through brand operations, digital content systems, and cross-functional coordination that help large-scale initiatives stay organized, visible, and on track.
+                
+I work under Arizona State University's Chief Brand Office, supporting the Enterprise Brand Strategy & Management team with brand operations, content systems, and project coordination across large-scale university initiatives.
               </p>
               <a
                 href="#portfolio"
@@ -1452,8 +1453,8 @@ const Home = () => {
                           {card.title}
                         </h3>
 
-                        <div className="mt-6 flex-1">
-                          <div className="transition-all duration-300 ease-in-out group-hover:opacity-0 group-hover:-translate-y-2">
+                        <div className="mt-3 flex-1 relative">
+                          <div className="absolute left-0 right-0 top-0 transition-all duration-300 ease-in-out group-hover:opacity-0 group-hover:-translate-y-2">
                             <p className="inline-flex items-center gap-2 text-[15px] font-medium text-brand-charcoal">
                               {card.teaser}
                               <span className="inline-block animate-[arrow-nudge_1.2s_ease-in-out_infinite]">
@@ -1462,10 +1463,10 @@ const Home = () => {
                             </p>
                           </div>
 
-                          <div className="mt-2 grid transition-all duration-300 ease-in-out [grid-template-rows:0fr] group-hover:[grid-template-rows:1fr]">
+                          <div className="mt-0 grid transition-all duration-300 ease-in-out [grid-template-rows:0fr] group-hover:[grid-template-rows:1fr]">
                             <div className="overflow-hidden">
-                              <div className="translate-y-2 opacity-0 transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
-                                <div className={`mb-4 mt-1 h-px w-full bg-transparent transition-colors duration-300 ${card.dividerTone}`} />
+                              <div className="translate-y-1 opacity-0 transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
+                                <div className={`mb-2 mt-0 h-px w-full bg-transparent transition-colors duration-300 ${card.dividerTone}`} />
                                 <p className="text-[14px] leading-[1.75] text-brand-charcoal">
                                   {card.description}
                                 </p>
@@ -1582,23 +1583,24 @@ const Home = () => {
                 title: "Inside the Brand System",
                 customType: "brandops",
                 overviewBadge: "Chief Brand Office · Enterprise Brand",
-                problem: "ASU's enterprise brand work needed clearer systems, content structure, and team coordination at scale.",
-                solution: "Built structure across Wrike workflows, Drupal content systems, research, reporting, and asset management to support brand execution at scale.",
-                result: "Supported 600+ projects and 100+ departments through stronger workflows, visibility, and brand consistency.",
+                problem: "ASU's brand team needed stronger systems to manage hundreds of projects and departments consistently.",
+                solution: "Supported Wrike tracking for 600+ projects, helped maintain the brand website on Drupal CMS, and assisted with internal documentation audits.",
+                result: "Contributed to more consistent brand operations across 100+ university departments.",
                 details: "A closer look at the systems behind ASU&apos;s enterprise brand work. Inside the Chief Brand Office, I contributed across workflow design, website management, research, asset coordination, and reporting to help teams stay aligned and keep brand execution moving.",
-                skills: ["Wrike", "Drupal CMS", "Brand Operations", "Content Systems", "Cross-team Coordination"],
-                tagSkills: ["Workflow Systems", "Brand Research", "Asset Management", "Operations"],
+                skills: ["Wrike", "Drupal CMS", "Webspark", "Pantheon", "Brand Operations"],
+                tagSkills: ["Wrike", "Drupal CMS", "Webspark", "Pantheon", "Brand Operations"],
                 delay: 0
               },
               {
                 img: nomadtemp ,
                 title: "Nomad Temporary Housing",
                 overviewBadge: "Client Experience Internship · Fortune 1000",
-                problem: "As an intern, I stepped into a fast-moving client support environment where high-volume housing requests needed faster, more reliable responses.",
-                solution: "Implemented a prioritization matrix and standardized communication templates.",
-                result: "Handled 500+ inquiries while maintaining a 98% satisfaction rate through structured CRM workflows.",
+                problem: "Fortune 1000 relocation clients needed faster, more organized support across high-volume communication channels.",
+                solution: "Assisted with 25-30 daily client interactions, supported 200+ weekly communications, and helped maintain CRM records and resolve escalations.",
+                result: "Contributed to consistent, professional client support throughout a fast-paced internship environment.",
                 details: "My internship at Nomad Temporary Housing gave me real experience in fast-paced client operations. I supported temporary housing requests for employees at major companies, learned how to communicate with urgency and professionalism, and built systems that improved response time, visibility, and follow-through across 500+ interactions.",
-                skills: ["Client Experience", "Crisis Management", "Operations", "B2B Support"],
+                skills: ["Salesforce CRM", "Ticketing Systems", "Client Communications", "Escalation Management"],
+                tagSkills: ["Salesforce CRM", "Ticketing Systems", "Client Communications", "Escalation Management"],
                 delay: 0.15
               },
               {
@@ -1606,12 +1608,12 @@ const Home = () => {
                 title: "iCustomer",
                 hasBlog: true,
                 overviewBadge: "Content Strategy · B2C Marketing",
-                problem: "The brand needed a clearer content strategy to grow visibility and connect with B2C audiences.",
-                solution: "Created and managed a unified content strategy across blogs, social media, and email campaigns. Used SEO, content calendars, and audience-specific messaging to connect with the right students.",
-                result: "Built content across blogs, social media, and email to support SEO, visibility, and lead generation across 3 channels.",
+                problem: "The brand needed SEO-driven content to grow visibility and reach B2C audiences more effectively.",
+                solution: "Assisted with keyword research using Google Trends and Ahrefs and helped publish SEO-optimized blog content on Wix.",
+                result: "Contributed to improved content visibility and stronger SEO structure across multiple channels.",
                 details: "The iCustomer initiative was a comprehensive attempt to unify messaging sent out to the student body. I created a consistent editorial calendar, established strict narrative guidelines, and coordinated with the creative team to build supporting visuals. By speaking with 'one voice', we saw a dramatic 45% lift in student engagement.",
-                skills: ["Marketing Coordination", "Copywriting", "Digital Strategy", "Project Management"],
-                tagSkills: ["Content Marketing", "SEO", "eCommerce", "B2C"],
+                skills: ["SEO", "Ahrefs", "Google Trends", "Wix", "Content Marketing"],
+                tagSkills: ["SEO", "Ahrefs", "Google Trends", "Wix", "Content Marketing"],
                 delay: 0.3,
                 blogs: [
                   {
@@ -1679,9 +1681,15 @@ const Home = () => {
                   
                   <div className="space-y-5 flex-grow mb-8">
                     <div>
-                      <span className="text-brand-gold font-bold text-[13px] uppercase tracking-wider block mb-1.5">Problem:</span>
+                      <span className="text-brand-gold font-bold text-[13px] uppercase tracking-wider block mb-1.5">Opportunity:</span>
                       <p className="text-brand-charcoal text-[15px] leading-relaxed">
                         {study.problem}
+                      </p>
+                    </div>
+                    <div>
+                      <span className="text-brand-gold font-bold text-[13px] uppercase tracking-wider block mb-1.5">Implementation:</span>
+                      <p className="text-brand-charcoal text-[15px] leading-relaxed">
+                        {study.solution}
                       </p>
                     </div>
                     <div>
@@ -1775,11 +1783,11 @@ const Home = () => {
 
                     <div className="grid md:grid-cols-3 gap-6 mb-10 bg-brand-cream border border-brand-line/70 p-8 rounded-[24px]">
                       <div>
-                        <span className="font-bold text-brand-gold block mb-2 text-sm uppercase tracking-wider">Problem</span>
+                        <span className="font-bold text-brand-gold block mb-2 text-sm uppercase tracking-wider">Opportunity</span>
                         <p className="text-brand-charcoal">{selectedStudy.problem}</p>
                       </div>
                       <div>
-                        <span className="font-bold text-brand-plum block mb-2 text-sm uppercase tracking-wider">Solution</span>
+                        <span className="font-bold text-brand-plum block mb-2 text-sm uppercase tracking-wider">Implementation</span>
                         <p className="text-brand-charcoal">{selectedStudy.solution}</p>
                       </div>
                       <div>
@@ -1988,22 +1996,50 @@ const Home = () => {
             </div>
 
             <div className="p-12 md:col-span-3 bg-brand-white">
-              <form className="space-y-6 flex flex-col">
+              <form
+                action="https://formsubmit.co/shahvinita1176@gmail.com"
+                method="POST"
+                className="space-y-6 flex flex-col"
+              >
+                <input type="hidden" name="_subject" value="New portfolio inquiry" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
-                    <label className="text-sm font-bold text-brand-plum">Name</label>
-                    <input type="text" className="bg-brand-cream border border-brand-line p-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-gold/35" placeholder="John Doe" />
+                    <label className="text-sm font-bold text-brand-plum" htmlFor="contact-name">Name</label>
+                    <input
+                      id="contact-name"
+                      name="name"
+                      type="text"
+                      required
+                      className="bg-brand-cream border border-brand-line p-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-gold/35"
+                      placeholder="John Doe"
+                    />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="text-sm font-bold text-brand-plum">Email</label>
-                    <input type="email" className="bg-brand-cream border border-brand-line p-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-gold/35" placeholder="john@example.com" />
+                    <label className="text-sm font-bold text-brand-plum" htmlFor="contact-email">Email</label>
+                    <input
+                      id="contact-email"
+                      name="email"
+                      type="email"
+                      required
+                      className="bg-brand-cream border border-brand-line p-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-gold/35"
+                      placeholder="john@example.com"
+                    />
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-bold text-brand-plum">Message</label>
-                  <textarea rows="4" className="bg-brand-cream border border-brand-line p-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-gold/35 resize-none" placeholder="Hello Vinita..."></textarea>
+                  <label className="text-sm font-bold text-brand-plum" htmlFor="contact-message">Message</label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    rows="4"
+                    required
+                    className="bg-brand-cream border border-brand-line p-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-gold/35 resize-none"
+                    placeholder="Hello Vinita..."
+                  ></textarea>
                 </div>
-                <button type="button" className="self-start mt-4 px-8 py-3 bg-brand-gold text-white rounded-full font-bold hover:bg-brand-gold-deep transition-colors shadow-[0_14px_30px_rgba(212,163,115,0.24)] cursor-pointer">
+                <button type="submit" className="self-start mt-4 px-8 py-3 bg-brand-gold text-white rounded-full font-bold hover:bg-brand-gold-deep transition-colors shadow-[0_14px_30px_rgba(212,163,115,0.24)] cursor-pointer">
                   Send Message
                 </button>
               </form>

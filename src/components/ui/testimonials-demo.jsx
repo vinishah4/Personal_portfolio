@@ -125,9 +125,9 @@ const HomeTestimonials = () => {
         </motion.div>
 
         <div className="mt-14 flex max-h-[720px] justify-center gap-8 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_16%,black_84%,transparent)]">
-          <TestimonialsColumn testimonials={firstColumn} duration={15} />
-          <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={18} />
-          <TestimonialsColumn testimonials={thirdColumn} className="hidden xl:block" duration={16} />
+          <TestimonialsColumn testimonials={firstColumn} duration={30} />
+          <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={36} />
+          <TestimonialsColumn testimonials={thirdColumn} className="hidden xl:block" duration={32} />
         </div>
       </div>
     </section>
