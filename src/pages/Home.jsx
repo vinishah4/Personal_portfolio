@@ -1235,6 +1235,8 @@ const BrandOperationsCaseStudyModal = ({ study, onClose }) => (
 
 const Home = () => {
   const [selectedStudy, setSelectedStudy] = useState(null);
+  const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
+  const [contactStatus, setContactStatus] = useState({ state: 'idle', message: '' });
   const location = useLocation();
 
   useEffect(() => {
@@ -1267,6 +1269,49 @@ const Home = () => {
       window.clearTimeout(timeoutId);
     };
   }, [location.hash]);
+
+  const handleContactChange = (event) => {
+    const { name, value } = event.target;
+    setContactForm((current) => ({ ...current, [name]: value }));
+  };
+
+  const handleContactSubmit = async (event) => {
+    event.preventDefault();
+    setContactStatus({ state: 'submitting', message: 'Sending your message...' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(contactForm),
+      });
+
+      const rawResponse = await response.text();
+      let data = {};
+
+      if (rawResponse) {
+        try {
+          data = JSON.parse(rawResponse);
+        } catch {
+          data = {};
+        }
+      }
+
+      if (!response.ok) {
+        throw new Error(data?.error || 'Something went wrong while sending your message.');
+      }
+
+      setContactForm({ name: '', email: '', message: '' });
+      setContactStatus({ state: 'success', message: data.message || 'Your message has been sent.' });
+    } catch (error) {
+      setContactStatus({
+        state: 'error',
+        message: error.message || 'Unable to send your message right now.',
+      });
+    }
+  };
 
   return (
     <div className="pt-24">
@@ -1996,14 +2041,7 @@ I work under Arizona State University's Chief Brand Office, supporting the Enter
             </div>
 
             <div className="p-12 md:col-span-3 bg-brand-white">
-              <form
-                action="https://formsubmit.co/shahvinita1176@gmail.com"
-                method="POST"
-                className="space-y-6 flex flex-col"
-              >
-                <input type="hidden" name="_subject" value="New portfolio inquiry" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_template" value="table" />
+              <form className="space-y-6 flex flex-col" onSubmit={handleContactSubmit}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
                     <label className="text-sm font-bold text-brand-plum" htmlFor="contact-name">Name</label>
@@ -2012,6 +2050,8 @@ I work under Arizona State University's Chief Brand Office, supporting the Enter
                       name="name"
                       type="text"
                       required
+                      value={contactForm.name}
+                      onChange={handleContactChange}
                       className="bg-brand-cream border border-brand-line p-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-gold/35"
                       placeholder="John Doe"
                     />
@@ -2023,6 +2063,8 @@ I work under Arizona State University's Chief Brand Office, supporting the Enter
                       name="email"
                       type="email"
                       required
+                      value={contactForm.email}
+                      onChange={handleContactChange}
                       className="bg-brand-cream border border-brand-line p-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-gold/35"
                       placeholder="john@example.com"
                     />
@@ -2035,13 +2077,28 @@ I work under Arizona State University's Chief Brand Office, supporting the Enter
                     name="message"
                     rows="4"
                     required
+                    value={contactForm.message}
+                    onChange={handleContactChange}
                     className="bg-brand-cream border border-brand-line p-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-gold/35 resize-none"
                     placeholder="Hello Vinita..."
                   ></textarea>
                 </div>
-                <button type="submit" className="self-start mt-4 px-8 py-3 bg-brand-gold text-white rounded-full font-bold hover:bg-brand-gold-deep transition-colors shadow-[0_14px_30px_rgba(212,163,115,0.24)] cursor-pointer">
+                <button
+                  type="submit"
+                  disabled={contactStatus.state === 'submitting'}
+                  className="self-start mt-4 px-8 py-3 bg-brand-gold text-white rounded-full font-bold hover:bg-brand-gold-deep transition-colors shadow-[0_14px_30px_rgba(212,163,115,0.24)] cursor-pointer disabled:cursor-not-allowed disabled:opacity-70"
+                >
                   Send Message
                 </button>
+                {contactStatus.message && (
+                  <p
+                    className={`text-sm font-medium ${
+                      contactStatus.state === 'error' ? 'text-[#B35C5C]' : 'text-brand-plum'
+                    }`}
+                  >
+                    {contactStatus.message}
+                  </p>
+                )}
               </form>
             </div>
           </div>
